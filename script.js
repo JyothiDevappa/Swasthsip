@@ -10,6 +10,19 @@ function showSlide() {
 
 setInterval(showSlide, 4000); // Change every 4 seconds
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Hamburger toggle
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
@@ -19,23 +32,9 @@ hamburger.addEventListener('click', () => {
 });
 
 
-// feedback 
 
-const carousel = document.querySelector('.feedback-carousel');
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
 
-leftArrow.addEventListener('click', () => {
-  carousel.scrollBy({
-    left: -300,  // scroll left by 300px
-    behavior: 'smooth'
-  });
-});
 
-rightArrow.addEventListener('click', () => {
-  carousel.scrollBy({
-    left: 300,   // scroll right by 300px
-    behavior: 'smooth'
-  });
-});
+
+
 

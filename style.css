@@ -8,6 +8,7 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
   height: 100%;
   overflow-x: hidden;
+  background: #222;
 }
 
 /* HEADER */
@@ -15,7 +16,7 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 20px 50px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,17 +28,32 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: white;
-  font-size: 24px;
+  color: rgb(220, 248, 175);
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
+
+
 .logo img {
-  height: 10px; /* increased image size */
+  height: 65px; /* or 50px if you want bigger */
   width: auto;
   object-fit: contain;
 }
+
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 30px;
+  }
+
+  .navbar {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+
 
 
 .navbar {
@@ -82,6 +98,7 @@ header {
   width: 100%;
   height: 100vh;
   position: relative;
+  
 }
 
 .slider {
@@ -185,6 +202,11 @@ header {
   max-width: 700px;
 }
 
+
+
+
+
+
 /* GRID STYLES */
 .product-grid {
   display: grid;
@@ -277,24 +299,23 @@ header {
 }
 
 
-
-
-
 .quality-section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  justify-content: center;         /* Center horizontally */
+  align-items: center;            /* Center vertically */
+  gap: 60px;                      /* More gap between left and right */
   padding: 60px 30px;
   background-color: #1a1a1a;
   color: white;
   flex-wrap: wrap;
+  text-align: left;
 }
 
 /* LEFT SIDE TEXT */
 .quality-text {
   flex: 1;
   min-width: 280px;
+  max-width: 600px;               /* Limit width for neatness */
 }
 
 .quality-heading {
@@ -324,7 +345,7 @@ header {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;           /* More gap between points */
 }
 
 .quality-point img {
@@ -336,13 +357,15 @@ header {
 .quality-point h3 {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 10px;           /* Gap between heading and paragraph */
 }
 
 .quality-point p {
   font-size: 16px;
   color: #ccc;
   margin: 0;
+  line-height: 1.7;              /* Relaxed spacing between lines */
+  max-width: 100%;
 }
 
 /* RIGHT SIDE IMAGE */
@@ -353,39 +376,6 @@ header {
   align-items: center;
   min-width: 280px;
 }
-
-
-
-.bowl-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto;
-  width: 400px;
-  height: 400px;
-}
-
-.bowl-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.bouncing-bowl {
-  width: 420px;
-  animation: bounceSlow 3s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
-
-.bouncing-bowl:hover {
-  transform: scale(1.1);
-}
-
-@keyframes bounceSlow {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
-
 
 /* MOBILE VIEW */
 @media (max-width: 768px) {
@@ -403,202 +393,229 @@ header {
   .quality-image {
     margin-top: 40px;
   }
-
-  .bowl-spin {
-    width: 220px;
-  }
 }
 
-/*   feedback sectionn */
 
-.feedback-section {
-  padding: 40px 20px;
-  background: #222; /* Full width dark background */
-  color: white;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-}
 
-.feedback-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Feedback Section Styling */
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 30px;
+  color: #2e7d32; /* leaf green */
   position: relative;
   display: inline-block;
-  padding-bottom: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .section-title::after {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
+  width: 0;
+  height: 4px;
   bottom: 0;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  transform-origin: left;
-  animation: underlineAnim 1.5s ease forwards;
+  left: 0;
+  background-color: #ffffff;
+  transition: width 0.4s ease;
 }
 
-@keyframes underlineAnim {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+.section-title:hover::after {
+  width: 100%;
+}
+
+.feedback-section {
+  background-color: #1b1a1a;
+  padding: 40px 0;
+}
+
+.feedback-container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .feedback-wrapper {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Spread arrows at edges */
-  gap: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  margin-top: 30px;
 }
 
 .arrow {
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border: none;
+  background-color: #007B5E;
   color: white;
-  font-size: 2rem;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
   cursor: pointer;
-  user-select: none;
-  transition: color 0.3s ease;
-  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background-color: #00513f;
+}
+
+.carousel-outer {
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feedback-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.feedback-card {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.arrow:hover {
-  color: #6ac045;
+.feedback-card.active {
+  left: 0;
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 1;
 }
 
-.feedback-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 10px 0;
-  width: calc(100% - 120px); /* leave space for arrows (50px each + gap) */
-  scrollbar-width: none; /* Firefox */
+.feedback-card.exit-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
-.feedback-carousel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
-.feedback-card {
-  flex: 0 0 280px;
-  background: #333;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-  font-style: italic;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.feedback-card:hover {
-  transform: scale(1.05);
-}
-
-.feedback-card img {
-  width: 50px;
-  height: 50px;
+.feedback-icon {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-bottom: 15px;
   object-fit: cover;
 }
 
 .feedback-card p {
-  margin: 0 0 10px 0;
   font-style: italic;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .feedback-card h4 {
-  margin-top: auto;
-  font-weight: 700;
-  font-style: normal;
-  text-align: right;
-  width: 100%;
-  color: #a0d468;
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .feedback-wrapper {
-    gap: 0;
-  }
-  .feedback-carousel {
-    width: calc(100% - 100px);
-    gap: 15px;
-  }
-  .arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.8rem;
-  }
+  margin-top: 5px;
+  font-weight: bold;
+  color: #007B5E;
 }
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact section */
 .contact-section {
   background: #222;
-  color: white;
+  color: rgb(200, 211, 199);
   padding: 40px 20px;
   text-align: center;
 }
 
 .contact-title {
   font-size: 2.2rem;
+  font-weight: bold;
+  color: rgb(22, 102, 11); /* your golden shade */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 25px;
+.contact-title::after {
+  content: '';
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 50%;
+  height: 3px;
+  background-color: rgb(224, 168, 46);
+  transition: all 0.3s ease;
 }
 
-.contact-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.contact-title:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+
+
+
+.contact-title2 {
   font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-.contact-line img {
-  width: 24px;
-  height: 24px;
-  
-}
 
-.youtube-link img {
-  width: 40px;
-  height: 40px;
-  margin-top: 10px;
-  transition: transform 0.3s ease;
-}
 
-.youtube-link img:hover {
-  transform: scale(1.1);
-}
+
+
 
 .feedback-note {
   margin: 25px 0 15px;
@@ -641,21 +658,10 @@ header {
 }
 
 @media (max-width: 600px) {
-  .contact-title {
-    font-size: 1.8rem;
-  }
-
-  .contact-line span {
-    font-size: 0.95rem;
-  }
-
-  .youtube-link img {
-    width: 36px;
-    height: 36px;
-  }
-
+  .contact-ti
   .feedback-note {
     font-size: 1rem;
+    
   }
 
   .feedback-form input,
@@ -663,4 +669,91 @@ header {
   .feedback-form button {
     font-size: 0.95rem;
   }
+}
+
+
+
+
+/* Bigger font for first main pic slide*/
+
+.caption {
+  font-size: 64px;             /* Bigger font */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 150px;
+  width: 100vw;                /* Full width of screen */
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;                   /* More space between words */
+  flex-wrap: wrap;
+  padding: 0 20px;             /* Small side padding */
+  box-sizing: border-box;
+}
+
+/* Welcome To — Agriculture green */
+.welcome-text {
+  color: #ffffff; /* Forest Green */
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+/* Swastip — Soil/Brownish orange */
+.swastip-text {
+  color: #ffffff; /* Forest Green */
+  opacity: 0;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Optional: glowing hover */
+.welcome-text:hover,
+.swastip-text:hover {
+  text-shadow: 2px 2px 12px #88ff88;
+  transform: scale(1.05);
+  transition: 0.1s ease;
+}
+
+
+.footer {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 15px 10px;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.footer-icons img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin: 0;
 }
