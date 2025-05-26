@@ -124,12 +124,12 @@ header {
 
 .caption {
   position: absolute;
-  bottom: 20%;
+  bottom: 36%;
   left: 10%;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 48px;
   max-width: 600px;
-  line-height: 1.2;
+  line-height: 1.3;
   font-weight: bold;
 }
 
@@ -757,3 +757,7 @@ header {
   font-size: 0.9rem;
   margin: 0;
 }
+
+
+
+

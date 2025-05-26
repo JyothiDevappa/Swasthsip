@@ -95,14 +95,14 @@
   </div>
   <div class="product-card">
     <a href="products.html?product=2">
-      <img src="img2.png" alt="Dry Fruit Juice">
+      <img src="Untitled design (12).png" alt="Dry Fruit Juice">
       <div class="overlay"><button>Buy Product</button></div>
       <p class="product-name">Dry Fruit Juice</p>
     </a>
   </div>
   <div class="product-card">
     <a href="products.html?product=3">
-      <img src="img4.png" alt="Herbal Tea">
+      <img src="ragi1.png" alt="Herbal Tea">
       <div class="overlay"><button>Buy Product</button></div>
       <p class="product-name">Herbal Tea</p>
     </a>
@@ -278,20 +278,6 @@
 
 
 
-<section class="contact-section scroll-fade" id="contact">
-
-  <h1 class="contact-title">"Your Feedback  Fuels Our Growth "</h1>
-  <h2 class="contact-title2">" Share Your Thoughts!!"</h2>
-
-
-  <form class="feedback-form">
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Gmail" required />
-    <textarea placeholder="Your Message" required></textarea>
-    <button type="submit">Send Feedback</button>
-  </form>
-</section>
-
 
 
 
@@ -312,6 +298,189 @@
       observer.observe(el);
     });
   </script>
+
+
+
+
+
+
+
+
+
+<section id="slide4" style="background-color: #1b1a1a; padding: 60px 20px; color: white;">
+  <form id="feedbackForm" action="https://formsubmit.co/jyothidevappa@gmail.com" method="POST" style="max-width: 600px; margin: auto;">
+    <h2 style="text-align: center; margin-bottom: 40px; font-size: 28px; text-transform: uppercase;">
+      Your Feedback Fuels Our Growth
+    </h2>
+
+    <!-- Name -->
+    <div class="input-box">
+      <img src="user-icon.png" alt="User Icon">
+      <input type="text" name="name" placeholder="Name" required>
+    </div>
+
+    <!-- Email -->
+    <div class="input-box">
+      <img src="gmail-icons.png" alt="Email Icon">
+      <input type="email" name="email" placeholder="Email Address" required>
+    </div>
+
+    <!-- Phone -->
+    <div class="input-box">
+      <img src="icon-phone-.png" alt="Phone Icon">
+      <input type="text" name="phone" placeholder="Phone">
+    </div>
+
+    <!-- Subject -->
+    <div class="input-box">
+      <img src="subject-write.png" alt="Subject Icon">
+      <input type="text" name="subject" placeholder="Subject">
+    </div>
+
+    <!-- Message -->
+    <div class="input-box">
+      <img src="message-icon.png" alt="Message Icon">
+      <textarea name="message" placeholder="How can we help you? Feel free to get in touch!" required></textarea>
+    </div>
+
+    <!-- Feedback Button -->
+    <button type="submit" class="submit-btn">
+      <img src="submit-icon.png" alt="Send Icon">
+      Submit Feedback
+    </button>
+
+    <!-- Status Messages -->
+    <div id="formLoader">Submitting your feedback...</div>
+    <div id="formSuccess">Thank you! Your feedback was submitted successfully.</div>
+    <div id="formError">Oops! Something went wrong. Please try again.</div>
+  </form>
+</section>
+
+<style>
+  .input-box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    margin-bottom: 25px;
+    padding: 10px 5px;
+    transition: border-color 0.3s;
+  }
+
+  .input-box:hover {
+    border-color: #b1e478;
+  }
+
+  .input-box img {
+    width: 20px;
+    margin-right: 12px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+  }
+
+  .input-box:hover img {
+    transform: scale(1.2);
+  }
+
+  .input-box input,
+.input-box textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: white;
+  padding: 8px;
+  background-color: transparent;
+
+}
+
+
+  textarea {
+    resize: vertical;
+    height: 80px;
+  }
+
+  .submit-btn {
+    background-color: #517040;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .submit-btn img {
+    width: 20px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #98eb4b;
+    transform: scale(1.05);
+  }
+
+  .submit-btn:hover img {
+    transform: translateX(5px);
+  }
+
+  #formLoader,
+  #formSuccess,
+  #formError {
+    margin-top: 20px;
+    display: none;
+    font-size: 14px;
+  }
+
+  #formLoader { color: blue; }
+  #formSuccess { color: green; }
+  #formError { color: red; }
+</style>
+
+<script>
+  document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+    const loader = document.getElementById('formLoader');
+    const success = document.getElementById('formSuccess');
+    const error = document.getElementById('formError');
+
+    loader.style.display = 'block';
+    success.style.display = 'none';
+    error.style.display = 'none';
+
+    setTimeout(() => {
+      loader.style.display = 'none';
+      success.style.display = 'block';
+      document.getElementById('feedbackForm').reset(); // ✅ This clears the form!
+    }, 2500);
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

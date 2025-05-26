@@ -5,257 +5,281 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us - Organic</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
     }
 
     body {
-      background: #f4fff4;
-      color: #2f4f2f;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background: #000;
+      color: #fff;
       padding: 40px 20px;
     }
 
-    /* Underline effect for headings */
-    h1, h2, h3 {
-      position: relative;
+    .page-title {
+      font-size: 40px;
       text-align: center;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: #27632a;
-      letter-spacing: 1.2px;
+      margin-bottom: 50px;
+      position: relative;
+      color: rgb(65, 194, 87);
     }
 
-    h1::after, h3::after {
+    .page-title span {
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title span::after {
       content: '';
       position: absolute;
-      left: 50%;
+      left: 0;
       bottom: -8px;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #7acc57, #2a7a2a);
-      border-radius: 2px;
-      transition: width 0.3s ease;
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease-in-out;
     }
 
-    h1:hover::after, h3:hover::after {
-      width: 120px;
+    .page-title span:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
-    h2 {
-      font-style: italic;
-      font-weight: 400;
-      color: #4f6f4f;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .left {
+      flex: 1.2;
+      min-width: 300px;
+      padding-right: 40px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .left h1, .right h1 {
+      position: relative;
+      display: inline-block;
+      color: rgb(231, 241, 233);
       margin-bottom: 40px;
     }
 
-    .contact-container {
-      display: flex;
-      gap: 40px;
-      max-width: 1100px;
+    .left h1::after, .right h1::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
       width: 100%;
-      background: #ffffff;
-      border-radius: 25px;
-      padding: 30px;
-      box-shadow: 0 12px 30px rgba(42, 122, 42, 0.15);
-      transition: box-shadow 0.4s ease;
+      height: 2px;
+      background-color: #fff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease-in-out;
     }
 
-    .contact-container:hover {
-      box-shadow: 0 18px 50px rgba(42, 122, 42, 0.3);
+    .left h1:hover::after,
+    .right h1:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
-    .left-section, .right-section {
-      flex: 1;
-      padding: 25px 30px;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #d9f3d9, #b6d9b6);
-      box-shadow: inset 4px 4px 10px #b0d3b0,
-                  inset -4px -4px 10px #e0f7e0;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
+    .description {
+      font-size: 25px;
+      color: #5f5a56;
+      margin-bottom: 90px;
+      font-weight: bold;
+      text-align: center;
     }
 
-    .left-section:hover {
-      background: linear-gradient(145deg, #c0e6c0, #9edc9e);
-      box-shadow: inset 6px 6px 12px #a0c9a0,
-                  inset -6px -6px 12px #d1f0d1;
+    .info {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
     }
 
-    .right-section {
-      background: linear-gradient(145deg, #fff8e7, #f5e8c7);
-      box-shadow: inset 4px 4px 10px #f0e1bb,
-                  inset -4px -4px 10px #fffbe9;
+    .info img {
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
     }
 
-    .right-section:hover {
-      background: linear-gradient(145deg, #ffefc0, #fae7a8);
-      box-shadow: inset 6px 6px 12px #efd682,
-                  inset -6px -6px 12px #fff9c0;
+    .info a, .info span {
+      color: #fff;
+      text-decoration: none;
     }
 
-    /* Form styles */
+    .youtube-button {
+      margin-top: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border: 1px solid #fff;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      background-color: rgb(30, 31, 30);
+    }
+
+    .youtube-button img {
+      width: 50px;
+      height: 50px;
+      margin-right: 8px;
+
+    }
+
     form {
       display: flex;
       flex-direction: column;
     }
 
-    input, textarea {
-      padding: 14px 18px;
-      margin: 15px 0;
-      border: 2.5px solid #a7d18e;
-      border-radius: 15px;
-      font-size: 16px;
-      color: #2f4f2f;
-      background: #f9fff9;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      font-weight: 600;
-      resize: vertical;
-      min-height: 48px;
+    .input-group {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #444;
+      padding: 8px 0;
+      margin-bottom: 20px;
     }
 
-    input:focus, textarea:focus {
-      border-color: #4caf50;
-      box-shadow: 0 0 8px #7dd67d;
+    .input-group img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: none;
+      font-size: 16px;
+      background: transparent;
+      color: #fff;
       outline: none;
-      background: #ffffff;
+      padding: 8px 0;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
     }
 
     button {
-      margin-top: 20px;
-      padding: 15px;
-      font-size: 18px;
-      font-weight: 700;
-      background: linear-gradient(90deg, #7acc57, #2a7a2a);
+      margin-top: 30px;
+      padding: 14px;
+      font-size: 16px;
+      background: transparent;
       color: #fff;
-      border: none;
-      border-radius: 15px;
+      border: 1px solid #fff;
       cursor: pointer;
-      box-shadow: 0 8px 15px rgba(42, 122, 42, 0.4);
-      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
     }
 
     button:hover {
-      background: linear-gradient(90deg, #5c9c3a, #1f5e1f);
-      box-shadow: 0 12px 20px rgba(30, 85, 30, 0.7);
-      transform: translateY(-3px);
+      background: #2e2d2d;
     }
 
-    /* Contact lines */
-    .contact-line {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 15px 20px;
-      margin-bottom: 20px;
-      background: #f7fff7;
-      border-radius: 15px;
-      box-shadow: 0 5px 12px rgba(42, 122, 42, 0.15);
-      cursor: default;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    #formLoader,
+    #formSuccess,
+    #formError {
+      margin-top: 20px;
+      display: none;
+      font-size: 14px;
     }
 
-    .contact-line:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(42, 122, 42, 0.3);
-      background: #e6f7e6;
-    }
-
-    .contact-line img {
-      width: 28px;
-      height: 28px;
-      filter: drop-shadow(0 0 1px #2a7a2a);
-    }
-
-    /* Social links */
-    .social-links {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-    }
-
-    .social-links a img {
-      width: 42px;
-      height: 42px;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      filter: drop-shadow(0 2px 3px rgba(42, 122, 42, 0.3));
-    }
-
-    .social-links a:hover img {
-      transform: scale(1.25) rotate(10deg);
-      filter: drop-shadow(0 4px 6px rgba(42, 122, 42, 0.6));
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .contact-container {
-        flex-direction: column;
-        padding: 20px 15px;
-      }
-
-      .left-section, .right-section {
-        padding: 20px 15px;
-        margin-bottom: 30px;
-      }
-
-      h1::after, h3::after {
-        width: 60px;
-      }
-    }
+    #formLoader { color: blue; }
+    #formSuccess { color: green; }
+    #formError { color: red; }
   </style>
 </head>
 <body>
 
-  <h1>Contact Us</h1>
-  <h2>"Your thoughts nourish our roots – let's grow together 🌿"</h2>
+  <h1 class="page-title"><span>Contact Us</span></h1>
+      <h2 class="description">We’re here to answer your questions and help you connect with us easily.</h2>
 
-  <div class="contact-container">
-    <!-- Left: Send Message -->
-    <div class="left-section">
-      <h3>Send Us a Message</h3>
-      <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+  <div class="container">
+    <div class="left">
+      <h1>Get in Touch</h1>
+
+      <div class="info">
+        <img src="icons8-location-50.png" alt="Location" />
+        <span>123 Green Leaf Street, Herbal City, Earth 56789</span>
+      </div>
+
+      <div class="info">
+        <img src="icons8-phone-50.png" alt="Phone" />
+        <span>+91 8088121589</span>
+      </div>
+
+      <div class="info">
+        <img src="icons8-gmail-50.png" alt="Email" />
+        <span>jyothidevappa@gmail.com</span>
+      </div>
+
+      <div class="info">
+        <img src="icons8-website-50.png" alt="Website" />
+        <a href="https://yourwebsite.com" target="_blank">www.yourwebsite.com</a>
+      </div>
+
+      <a class="youtube-button" href="https://youtube.com/@yourchannel" target="_blank">
+        <img src="youtube-icon.png" alt="YouTube" />
+        Visit our YouTube
+      </a>
     </div>
 
-    <!-- Right: Contact Details -->
-    <div class="right-section">
-      <h3>Get in Touch</h3>
-      <div class="contact-line">
-        <img src="call-icon.png" alt="Call" />
-        <span>Call Us: 090-9090</span>
-      </div>
-      <div class="contact-line">
-        <img src="icon-location.png" alt="Location" />
-        <span>Location: Bangalore City</span>
-      </div>
-      <div class="contact-line">
-        <img src="website-icon.png" alt="Website" />
-        <span>Website: swasthisip@website</span>
-      </div>
+    <div class="right">
+      <h1>Send a Message</h1>
 
-      <div class="social-links">
-        <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener">
-          <img src="youtube-icon.png" alt="YouTube" />
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener">
-          <img src="instagram-icon.png" alt="Instagram" />
-        </a>
-      </div>
+      <form id="feedbackForm" action="https://formsubmit.co/jyothidevappa@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="input-group">
+          <img src="icons8-user-30 (1).png" alt="Name" />
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+
+        <div class="input-group">
+          <img src="icons8-gmail-50.png" alt="Email" />
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+
+        <div class="input-group">
+          <textarea name="message" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+        <div id="formLoader">Sending message...</div>
+        <div id="formSuccess">Message sent successfully!</div>
+        <div id="formError">Something went wrong. Please try again.</div>
+      </form>
     </div>
   </div>
 
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+      const loader = document.getElementById('formLoader');
+      const success = document.getElementById('formSuccess');
+      const error = document.getElementById('formError');
+
+      loader.style.display = 'block';
+      success.style.display = 'none';
+      error.style.display = 'none';
+
+      setTimeout(() => {
+        loader.style.display = 'none';
+        success.style.display = 'block';
+      }, 2500);
+    });
+  </script>
 </body>
 </html>
