@@ -29,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(220, 248, 175);
+  color: rgb(255, 255, 255);
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -93,57 +93,6 @@ header {
   color: white;
   cursor: pointer;
 }
-
-/* HERO */
-.hero {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-}
-
-.slider {
-  position: relative;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  background-size: cover;
-  background-position: center;
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-
-.caption {
-  position: absolute;
-  bottom: 30%;
-  text-align: left;
-  
-  color: rgb(255, 255, 255);
-  font-size: 48px;
-  max-width: 600px;
-  line-height: 1.3;
-  font-weight: bold;
-}
-
-/* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .navbar {
     display: none;
@@ -164,12 +113,13 @@ header {
     display: block;
   }
 
-  .caption {
-    font-size: 28px;
-    left: 5%;
-    bottom: 15%;
-  }
+  
 }
+
+
+/* HERO */
+
+
 
 
 
@@ -776,64 +726,96 @@ header {
 
 
 
-/* Arrows */
 
 
-/* General arrow styles */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.caption {
+  position: absolute;
+  bottom: 30%;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+  max-width: 600px;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+/* Arrow Styling - hidden by default on desktop */
 .arrow {
   color: white;
-  font-size: 2.5rem;
-  cursor: pointer;
   background: none;
   border: none;
-  padding: 0;
-  line-height: 1;
+  font-size: 2.2rem;
+  cursor: pointer;
+  display: none;
   z-index: 1000;
 }
 
-/* Desktop - absolute center vertical */
-.left-arrow {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
+.left-arrow,
 .right-arrow {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-/* Arrow container hidden by default */
-.arrow-container {
-  display: none;
-}
-
-/* Mobile - show bottom-left */
-@media (max-width: 768px) {
-  .slider-container {
-    position: relative;
-  }
-
-  .arrow-container {  
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    gap: 20px;
+/* MOBILE ONLY */
+@media only screen and (max-width: 768px) {
+  .caption {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 20px;
+    font-size: 32px;
+    width: 100%;
   }
 
   .left-arrow,
   .right-arrow {
-    position: static; /* reset absolute */
+    display: block;
+    bottom: 20px;
     transform: none;
+  }
+
+  .left-arrow {
+    left: 20px;
+  }
+
+  .right-arrow {
+    right: 20px;
   }
 }
 
-.arrow:focus {
-  outline: none;
-  box-shadow: none;
+/* Desktop caption alignment */
+@media only screen and (min-width: 769px) {
+  .caption {
+    left: 10%;
+  }
 }
-
