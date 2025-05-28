@@ -133,8 +133,9 @@ header {
 
 .caption {
   position: absolute;
-  bottom: 36%;
-  left: 10%;
+  bottom: 30%;
+  text-align: left;
+  
   color: rgb(255, 255, 255);
   font-size: 48px;
   max-width: 600px;
@@ -174,7 +175,6 @@ header {
 
 /* PRODUCTS SECTION */
 
-/* SECTION STYLES */
 .products {
   background-color: #405c2b;
   padding: 100px 40px;
@@ -411,7 +411,7 @@ header {
 .section-title {
   font-size: 32px;
   font-weight: bold;
-  color: #ffffff; /* leaf green */
+  color: #f1831c; /* leaf green */
   position: relative;
   display: inline-block;
   margin-bottom: 20px;
@@ -436,6 +436,7 @@ header {
 .feedback-section {
     background-color: #405c2b;
   padding: 40px 0;
+  
 }
 
 .feedback-container {
@@ -743,7 +744,7 @@ header {
 
 .footer {
   background-color: #102216;
-  color: #ccc;
+  color: #cccccc;
   text-align: center;
   padding: 15px 10px;
   bottom: 0;
@@ -775,15 +776,64 @@ header {
 
 
 
+/* Arrows */
 
-/* Animation Styles */
-    .scroll-fade {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease-out;
-    }
 
-    .scroll-fade.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* General arrow styles */
+.arrow {
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  z-index: 1000;
+}
+
+/* Desktop - absolute center vertical */
+.left-arrow {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Arrow container hidden by default */
+.arrow-container {
+  display: none;
+}
+
+/* Mobile - show bottom-left */
+@media (max-width: 768px) {
+  .slider-container {
+    position: relative;
+  }
+
+  .arrow-container {  
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    gap: 20px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    position: static; /* reset absolute */
+    transform: none;
+  }
+}
+
+.arrow:focus {
+  outline: none;
+  box-shadow: none;
+}
+

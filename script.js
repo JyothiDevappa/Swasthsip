@@ -1,6 +1,5 @@
-
-// changes hero images every 4 sec
-const slides = document.querySelectorAll('.slide');
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slide');
   let currentSlide = 0;
 
   function showSlide(index) {
@@ -17,15 +16,29 @@ const slides = document.querySelectorAll('.slide');
 
   setInterval(nextSlide, 4000);
 
-// run only once 
+  document.querySelector('.left-arrow').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
 
-  const fadeElements = document.querySelectorAll('.scroll-fade');
+  document.querySelector('.right-arrow').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+});
 
+
+
+
+
+
+
+    const fadeElements = document.querySelectorAll('.scroll-fade');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); 
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
@@ -33,28 +46,33 @@ const slides = document.querySelectorAll('.slide');
     fadeElements.forEach(el => {
       observer.observe(el);
     });
-// Hamburger toggle
-const hamburger = document.querySelector('.hamburger');
-const navbar = document.querySelector('.navbar');
-hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
+
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('product');
+    if (productId) {
+      const products = document.querySelectorAll('.product-detail');
+      products.forEach((product, index) => {
+        if ((index + 1).toString() === productId) {
+          product.style.display = 'block';
+          product.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  
+
+
+
 
 
 // Product detail logic
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('product');
-if (productId) {
-  const products = document.querySelectorAll('.product-detail');
-  products.forEach((product, index) => {
-    if ((index + 1).toString() === productId) {
-      product.style.display = 'block';
-      product.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      product.style.display = 'none';
-    }
-  });
-}
 
 
 
