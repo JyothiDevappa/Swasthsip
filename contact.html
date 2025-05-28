@@ -3,204 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us - Organic</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-    }
+  <title>Contact Us </title>
+    <link rel="stylesheet" href="contact.css" />
 
-    body {
-      background: #000;
-      color: #fff;
-      padding: 40px 20px;
-    }
-
-    .page-title {
-      font-size: 40px;
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-      color: rgb(65, 194, 87);
-    }
-
-    .page-title span {
-      position: relative;
-      display: inline-block;
-    }
-
-    .page-title span::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 100%;
-      height: 3px;
-      background-color: #fff;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease-in-out;
-    }
-
-    .page-title span:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: auto;
-      gap: 40px;
-    }
-
-    .left {
-      flex: 1.2;
-      min-width: 300px;
-      padding-right: 40px;
-    }
-
-    .right {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .left h1, .right h1 {
-      position: relative;
-      display: inline-block;
-      color: rgb(231, 241, 233);
-      margin-bottom: 40px;
-    }
-
-    .left h1::after, .right h1::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease-in-out;
-    }
-
-    .left h1:hover::after,
-    .right h1:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .description {
-      font-size: 25px;
-      color: #5f5a56;
-      margin-bottom: 90px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .info {
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-    }
-
-    .info img {
-      width: 30px;
-      height: 30px;
-      margin-right: 12px;
-    }
-
-    .info a, .info span {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .youtube-button {
-      margin-top: 40px;
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 16px;
-      border: 1px solid #fff;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      background-color: rgb(30, 31, 30);
-    }
-
-    .youtube-button img {
-      width: 50px;
-      height: 50px;
-      margin-right: 8px;
-
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .input-group {
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #444;
-      padding: 8px 0;
-      margin-bottom: 20px;
-    }
-
-    .input-group img {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-    }
-
-    input, textarea {
-      width: 100%;
-      border: none;
-      font-size: 16px;
-      background: transparent;
-      color: #fff;
-      outline: none;
-      padding: 8px 0;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    button {
-      margin-top: 30px;
-      padding: 14px;
-      font-size: 16px;
-      background: transparent;
-      color: #fff;
-      border: 1px solid #fff;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #2e2d2d;
-    }
-
-    #formLoader,
-    #formSuccess,
-    #formError {
-      margin-top: 20px;
-      display: none;
-      font-size: 14px;
-    }
-
-    #formLoader { color: blue; }
-    #formSuccess { color: green; }
-    #formError { color: red; }
-  </style>
 </head>
 <body>
+  <!-- NAVBAR -->
+  <header>
+
+   <div class="logo">
+  <a href="story.html">
+  
+  <img src="../assets/images/Swastip.png" alt="Swastip Logo"">
+
+  </a>
+  <span>SwasthSip</span>
+</div>
+
+    <nav class="navbar">
+<a href="index.html" class="nav-link active">Home</a>
+  <a href="#products">Products</a>
+  <a href="#quality">Quality</a>
+  <a href="#feedback">Feedback</a>
+  <a href="contact.html">Contact</a>
+  
+</nav>
+
+    <div class="hamburger">&#9776;</div>
+  </header>
+
+
+
+
 
   <h1 class="page-title"><span>Contact Us</span></h1>
       <h2 class="description">We’re here to answer your questions and help you connect with us easily.</h2>
@@ -210,27 +44,27 @@
       <h1>Get in Touch</h1>
 
       <div class="info">
-        <img src="icons8-location-50.png" alt="Location" />
+        <img src="assets/images/icons8-location-50 (1).png" alt="Location" />
         <span>123 Green Leaf Street, Herbal City, Earth 56789</span>
       </div>
 
       <div class="info">
-        <img src="icons8-phone-50.png" alt="Phone" />
+        <img src="..\assets\images\icon-phone-.png" alt="Phone" />
         <span>+91 8088121589</span>
       </div>
 
       <div class="info">
-        <img src="icons8-gmail-50.png" alt="Email" />
+        <img src="..\assets\images\gmail-icons.png" alt="Email" />
         <span>jyothidevappa@gmail.com</span>
       </div>
 
       <div class="info">
-        <img src="icons8-website-50.png" alt="Website" />
+        <img src="..\assets\images\icons8-website-50 (1).png" alt="Website" />
         <a href="https://yourwebsite.com" target="_blank">www.yourwebsite.com</a>
       </div>
 
       <a class="youtube-button" href="https://youtube.com/@yourchannel" target="_blank">
-        <img src="youtube-icon.png" alt="YouTube" />
+        <img src="..\assets\images\youtube-icon.png" alt="YouTube" />
         Visit our YouTube
       </a>
     </div>
@@ -243,12 +77,12 @@
         <input type="hidden" name="_template" value="table">
 
         <div class="input-group">
-          <img src="icons8-user-30 (1).png" alt="Name" />
+          <img src="..\assets\images\user-icon.png" alt="Name" />
           <input type="text" name="name" placeholder="Your Name" required />
         </div>
 
         <div class="input-group">
-          <img src="icons8-gmail-50.png" alt="Email" />
+          <img src="..\assets\images\gmail-icons.png" alt="Email" />
           <input type="email" name="email" placeholder="Your Email" required />
         </div>
 
@@ -281,5 +115,28 @@
       }, 2500);
     });
   </script>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-icons">
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="../assets/images/icon-instagram.png" alt="Instagram">
+    </a>
+    
+    <a href="https://www.linkedin.com" target="_blank">
+      <img src="assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn">  
+
+    <a href="mailto:yourmail@gmail.com" target="_blank">
+      <img src="..\assets\images\icons8-gmail-64.png" alt="Gmail">
+    </a>                  
+    <a href="https://www.youtube.com/@yourchannel" target="_blank">
+      <img src="../assets/images/icons8-youtube-50.png" alt="YouTube">
+    </a>
+  </div>
+  <p>© 2023 SwasthSip. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>

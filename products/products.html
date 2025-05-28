@@ -4,16 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products Details</title>
-    <link rel="stylesheet" href="products.css" />
+
+<link rel="stylesheet" href="css/products.css" />
 
 
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <header>
+
+   <div class="logo">
+  <a href="story.html">
+  
+  <img src="../assets/images/Swastip.png" alt="Swastip Logo"">
+
+  </a>
+  <span>SwasthSip</span>
+</div>
+
+    <nav class="navbar">
+<a href="index.html" class="nav-link active">Home</a>
+  <a href="#products">Products</a>
+  <a href="#quality">Quality</a>
+  <a href="#feedback">Feedback</a>
+  <a href="contact.html">Contact</a>
+  
+</nav>
+
+    <div class="hamburger">&#9776;</div>
+  </header>
+
+
+  
+
   <!-- Product detail section -->
   <section class="product-detail">
     <h1>Banana NutriShake</h1>
-    <img src="Banana NutriShake.png" alt="Banana NutriShake" />
+
+<img src="../assets/images/Banana-NutriShake.png" alt="Banana-NutriShake">
+
     <p><strong>Banana Nutrishake – Nature’s Energy Elixir in Every Sip</strong><br>
     Picture a delicious, creamy shake that wraps you in the goodness of nature’s finest treasures — a blend so rich, it feels like a hug from within. Our Banana Nutrishake is your perfect companion for busy mornings, midday refreshment, or anytime you need a wholesome pick-me-up.</p>
 
@@ -41,7 +71,7 @@
 
   <section class="product-detail">
     <h1>Dry Fruit Juice</h1>
-    <img src="img2.png" alt="Dry Fruit Juice" />
+    <img src="../assets/images/img2.png" alt="Dry Fruit Juice" />
     <p>Our Dry Fruit Juice is a delicious blend of nature’s finest dried fruits, carefully processed to preserve their rich taste and health benefits. Packed with vitamins, minerals, and antioxidants, this juice boosts immunity and revitalizes your body naturally. Each sip offers a burst of fruity sweetness combined with a hint of earthiness, refreshing your senses.</p>
     <p>Ideal for those looking for a healthy energy boost, Dry Fruit Juice hydrates and nourishes without added sugars or preservatives. It supports digestion, skin health, and provides lasting stamina throughout the day. Whether consumed as a refreshing drink or a nutrient-packed mixer, it’s a perfect addition to your healthy lifestyle.</p>
   </section>
@@ -108,9 +138,19 @@
     <p>Regular consumption of Amla Candy can support skin health, enhance metabolism, and promote detoxification. Free from artificial additives, it is a natural source of energy and wellness, making it a favorite among health-conscious individuals. Relish the perfect balance of sweet and sour with every bite.</p>
   </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Explore more products section -->
-  <!-- Explore more products section -->
-<!-- Explore more products section -->
 <section class="explore-section">
   <h2 class="explore-heading">Explore More Products</h2>
 
@@ -120,7 +160,7 @@
     <div class="slider-container">
       <div class="slider">
         <a href="products.html?product=1" class="product-card">
-          <img src="img2.png" alt="Ragi Malt" />
+          <img src="  assets/images/Banana NutriShake.png" alt="Ragi Malt" />
           <p>Ragi Malt</p>
         </a>
         <a href="products.html?product=2" class="product-card">
@@ -149,160 +189,103 @@
     <button class="arrow right-arrow">&#8594;</button>
   </div>
 </section>
-<style>
-.explore-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-
-.slider-container {
-  overflow: hidden;
-  flex: 1;
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.5s ease;
-  gap: 20px;
-}
-
-.product-card {
-  flex: 0 0 calc(25% - 20px); /* 4 cards in row */
-  text-align: center;
-  text-decoration: none;
-  color: black;
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.arrow {
-  background-color: transparent;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 10px;
-  z-index: 10;
-}
-
-@media (max-width: 1024px) {
-  .product-card {
-    flex: 0 0 calc(50% - 20px); /* 2 cards per row */
-  }
-}
-
-@media (max-width: 768px) {
-  .product-card {
-    flex: 0 0 calc(100% - 20px); /* 1 card per row */
-  }
-}
-</style>
 
 
 
- 
+<script src="script.js"></script>
+
+
 
 <script>
 
-    /* left/right arrows, card movement */
+// Product card slider arrows
+const slider = document.querySelector('.slider');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const cards = document.querySelectorAll('.product-card');
 
-  const slider = document.querySelector('.slider');
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
-  const cards = document.querySelectorAll('.product-card');
+let visibleCards = 4;
+let currentIndex = 0;
 
-  const totalCards = cards.length;
-  let visibleCards = 4;
-  let currentIndex = 0;
+function getVisibleCards() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 768) return 1;
+  if (screenWidth <= 1024) return 2;
+  return 4;
+}
 
-  // Detect visible cards based on screen width
-  function getVisibleCards() {
-    const screenWidth = window.innerWidth;
-    if (screenWidth <= 768) return 1;
-    if (screenWidth <= 1024) return 2;
-    return 4;
-  }
+function updateSlider() {
+  visibleCards = getVisibleCards();
+  const cardWidth = cards[0].offsetWidth + 20;
+  slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
 
-
-
-
-
-
-  
-  function updateSlider() {
-    visibleCards = getVisibleCards();
-    const cardWidth = cards[0].offsetWidth + 20; // include margin/gap
-    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-  }
-
-  rightArrow.addEventListener('click', () => {
-    currentIndex++;
-    if (currentIndex > totalCards - visibleCards) {
-      currentIndex = 0; // Loop to start
-    }
-    updateSlider();
-  });
-
-  leftArrow.addEventListener('click', () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = totalCards - visibleCards; // Loop to end
-    }
-    updateSlider();
-  });
-
-  window.addEventListener('resize', updateSlider);
+rightArrow?.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex > cards.length - visibleCards) currentIndex = 0;
   updateSlider();
+});
+
+leftArrow?.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) currentIndex = cards.length - visibleCards;
+  updateSlider();
+});
+
+window.addEventListener('resize', updateSlider);
+updateSlider();
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('product');
+if (productId) {
+  const products = document.querySelectorAll('.product-detail');
+  products.forEach((product, index) => {
+    if ((index + 1).toString() === productId) {
+      product.style.display = 'block';
+      product.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
 </script>
 
 
 
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-icons">
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="../assets/images/icon-instagram.png" alt="Instagram">
+    </a>
+    
+    <a href="https://www.linkedin.com" target="_blank">
+      <img src="../assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn">  
 
+    <a href="mailto:yourmail@gmail.com" target="_blank">
+      <img src="..\assets\images\icons8-gmail-64.png" alt="Gmail">
+    </a>                  
+    <a href="https://www.youtube.com/@yourchannel" target="_blank">
+      <img src="../assets/images/icons8-youtube-50.png" alt="YouTube">
+    </a>
+  </div>
+  <p>© 2023 SwasthSip. All Rights Reserved.</p>
+</footer>
 
+<script src="../assets/js/script.js"></script> 
 
+ <!-- <link rel="stylesheet" href="css/products.css" /> -->
+<script>
 
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-  // Get the product ID from URL, like ?product=3
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get('product');
-
-  if (productId) {
-    // Select all product-detail sections
-    const products = document.querySelectorAll('.product-detail');
-
-    // Hide all products first
-    products.forEach((product, index) => {
-      // productId in URL is 1-based, index is 0-based
-      if ((index + 1).toString() === productId) {
-        product.style.display = 'block'; // show this product
-        product.scrollIntoView({ behavior: 'smooth' }); // scroll to it
-      } else {
-        product.style.display = 'none'; // hide others
-      }
-    });
-  }
 </script>
-
 
 </body>
 </html>
