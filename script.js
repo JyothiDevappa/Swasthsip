@@ -30,10 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// fade animation for whole index.html // 
 
-
-
-    const fadeElements = document.querySelectorAll('.scroll-fade');
+const fadeElements = document.querySelectorAll('.scroll-fade');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -47,12 +46,26 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(el);
     });
 
-    const hamburger = document.querySelector('.hamburger');
-    const navbar = document.querySelector('.navbar');
-    hamburger.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
 
+    // hamburger section //
+
+    const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+
+// Toggle navbar on hamburger click
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
+// Hide navbar if clicked or touched outside
+document.addEventListener('mousedown', (event) => {
+  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+    navbar.classList.remove('active');
+  }
+});
+
+
+    // logic for products images link //
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('product');
     if (productId) {
@@ -68,11 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
 
-
-
-
-
-// Product detail logic
 
 
 
