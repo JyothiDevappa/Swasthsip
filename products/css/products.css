@@ -113,7 +113,8 @@ header {
 
 /* PRODUCT DETAIL SECTION */
 .product-detail {
-  margin-top: 90px; /* Below fixed header */
+
+margin-top: 110px;
   padding: 70px;
   border-radius: 20px;
   max-width: 950px;
@@ -292,4 +293,37 @@ header {
 .footer p {
   font-size: 0.9rem;
   margin: 0;
+}
+
+
+
+
+/* RESPONSIVE RULES */
+@media screen and (max-width: 768px) {
+  .logo img {
+    height: 45px;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
 }

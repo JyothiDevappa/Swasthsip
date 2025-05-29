@@ -67,3 +67,30 @@ document.addEventListener('mousedown', (event) => {
     navbar.classList.remove('active');
   }
 });
+
+
+
+
+// Example structure
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Show loading
+  document.getElementById("formLoader").style.display = "block";
+  document.getElementById("formSuccess").style.display = "none";
+  document.getElementById("formError").style.display = "none";
+
+  // Simulate sending
+  setTimeout(() => {
+    document.getElementById("formLoader").style.display = "none";
+
+    const isSuccess = true; // simulate success
+
+    if (isSuccess) {
+      document.getElementById("formSuccess").style.display = "block";
+      document.querySelector("form").reset(); // 🔄 this clears the inputs
+    } else {
+      document.getElementById("formError").style.display = "block";
+    }
+  }, 2000);
+});

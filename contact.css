@@ -6,10 +6,8 @@
 }
 
 body {
-background: #7ba961;
-
-
-  color: #fff;
+  background: linear-gradient(to bottom right, #fef7ee, #f1e8db); /* soft beige gradient */
+  color: #3e2f1c; /* warm brown for text */
   padding-top: 60px;
 }
 
@@ -18,11 +16,11 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 4px 30px;
+  padding: 0px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #bb8237;
+  background-color: #8b5e3c; /* woody brown */
   z-index: 1000;
 }
 
@@ -30,15 +28,14 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(220, 248, 175);
+  color: #e5f3c3; /* light herbal green */
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .logo img {
-  height: 65px;
-  width: auto;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -48,7 +45,7 @@ header {
 }
 
 .navbar a {
-  color: white;
+  color: #fffbe6;
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
@@ -60,7 +57,7 @@ header {
   position: absolute;
   width: 0%;
   height: 2px;
-  background: white;
+  background: #e0d6c3;
   left: 0;
   bottom: 0;
   transition: 0.3s;
@@ -81,10 +78,10 @@ header {
 
 /* PAGE TITLE */
 .page-title {
-  font-size: 40px;
+  font-size: 38px;
   text-align: center;
   margin-top: 40px;
-  color: white;
+  color: #435334;
 }
 
 .page-title span {
@@ -99,7 +96,7 @@ header {
   bottom: -8px;
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: #3e2f1c;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.4s ease-in-out;
@@ -122,56 +119,47 @@ header {
   padding: 0 30px;
 }
 
-.left {
-  flex: 1.2;
-  min-width: 300px;
-  padding-right: 40px;
-}
-
-.right {
+.left, .right {
   flex: 1;
   min-width: 280px;
 }
 
-.left h1,
-.right h1 {
-  position: relative;
-  display: inline-block;
-  color: rgb(19, 73, 30);
-  margin-bottom: 60px;
+.left h1, .right h1 {
+  color: #435334; /* olive green */
   margin-top: 70px;
+  margin-bottom: 30px;
+  font-size: 28px;
+  position: relative;
 }
 
-.left h1::after,
-.right h1::after {
+.left h1::after, .right h1::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -6px;
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: #a19888;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.4s ease-in-out;
 }
 
-.left h1:hover::after,
-.right h1:hover::after {
+.left h1:hover::after, .right h1:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
 .description {
-  font-size: 25px;
-  color: #924d15;
+  font-size: 22px;
+  color: #7b4e2c;
   margin-top: 35px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
 }
 
 .info {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
 }
@@ -182,28 +170,28 @@ header {
   margin-right: 12px;
 }
 
-.info a,
-.info span {
-  color: #fff;
+.info a, .info span {
+  color: #4a3c27;
   text-decoration: none;
+  font-weight: 500;
 }
 
+/* YOUTUBE BUTTON */
 .youtube-button {
   margin-top: 40px;
   display: inline-flex;
   align-items: center;
   padding: 10px 16px;
-  border: 1px solid #fff;
-  text-decoration: none;
+  border: none;
+  background-color: #6f4f2a;
   color: #fff;
   font-weight: 500;
-  background-color: rgb(90, 122, 82);
 }
 
 .youtube-button img {
-  width: 50px;
-  height: 50px;
-  margin-right: 8px;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
 }
 
 /* FORM */
@@ -215,7 +203,7 @@ form {
 .input-group {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #d1bfbf;
+  border-bottom: 1px solid #bcae9d;
   padding: 8px 0;
   margin-bottom: 20px;
 }
@@ -226,13 +214,12 @@ form {
   margin-right: 10px;
 }
 
-input,
-textarea {
+input, textarea {
   width: 100%;
   border: none;
   font-size: 16px;
-  background: transparent;
-  color: #ffffff;
+  background-color: #fffaf0;
+  color: #3e2f1c;
   outline: none;
   padding: 8px 0;
 }
@@ -246,45 +233,46 @@ button {
   margin-top: 30px;
   padding: 14px;
   font-size: 16px;
-  background: transparent;
+  background-color: #8b5e3c;
   color: #fff;
-  border: 1px solid #fff;
+  border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background: #2e2d2d;
+  background-color: #3e2f1c;
+}
+
+/* FORM STATUS */
+#formLoader {
+  color: #5b7d3c;
+}
+
+#formSuccess {
+  color: #3a7e35;
+}
+
+#formError {
+  color: #c0382b;
 }
 
 #formLoader,
 #formSuccess,
 #formError {
-  margin-top: 20px;
-  display: none;
+  display: none; /* Hide by default */
   font-size: 14px;
-}
-
-#formLoader {
-  color: blue;
-}
-
-#formSuccess {
-  color: green;
-}
-
-#formError {
-  color: red;
+  margin-top: 20px;
 }
 
 /* FOOTER */
+
+
+
 .footer {
-  background-color: #0d1d04;
-  color: #ccc;
+  background-color: #034d3b;
+  color: #fffcfc;
   text-align: center;
-  padding: 15px 10px;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
+  padding: 8px 10px;
 }
 
 .footer-icons {
@@ -295,8 +283,8 @@ button:hover {
 }
 
 .footer-icons img {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
@@ -309,7 +297,7 @@ button:hover {
   margin: 0;
 }
 
-/* RESPONSIVE RULES */
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .logo img {
     height: 45px;
@@ -318,7 +306,7 @@ button:hover {
   .navbar {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(62, 47, 28, 0.95);
     position: absolute;
     top: 70px;
     right: 20px;
@@ -333,44 +321,55 @@ button:hover {
 
   .hamburger {
     display: block;
+  }
+
+  body {
+    padding-top: 20px;
+  }
+
+  .page-title {
     font-size: 28px;
+    margin-top: 60px;
+  }
+
+  .description {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  input, textarea {
+    background-color: #fffaf0;
+    color: #3e2f1c;
+  }
+
+  button {
+    background-color: #8b5e3c;
     color: white;
-    cursor: pointer;
   }
 }
 
 
-@media screen and (max-width: 768px) {
-  body {
-    padding-top: 20px; /* reduce space below header */
-  }
 
-  .page-title {
-    font-size: 30px;
-    margin-top: 60px;
-    padding: 0 10px;
-  }
 
-  .description {
-    font-size: 20px;
-    margin-top: 10px; /* ADD this */
-    padding: 0 10px;   /* Make sure it has side space */
-  }
 
-  .container {
-    margin-top: 0px; /* ADD this to push container up */
-    padding: 0 15px;
-  }
 
-  .left,
-  .right {
-    margin-top: 5px;  /* Small top gap for subheadings */
-    padding-right: 0;
-  }
 
-  .left h1,
-  .right h1 {
-    margin-top: 30px; /* Reduce from 70px */
-    margin-bottom: 30px; /* Tighten spacing below heading */
-  }
+
+
+.input-group img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  filter: brightness(0) saturate(100%) contrast(100%);
+}
+
+.info img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  filter: brightness(0) saturate(100%) contrast(100%);
 }

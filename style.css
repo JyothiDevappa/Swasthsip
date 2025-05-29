@@ -754,6 +754,9 @@ textarea {
   .caption .swastip-text {
     text-align: center;
     margin: 0 auto;
+        line-height: 1.2;
+
+
   }
 }
 
