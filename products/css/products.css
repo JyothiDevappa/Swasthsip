@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   height: 100%;
   overflow-x: hidden;
-            background: #465a13 ;
+            background: #91a55f ;
 
 }
 
@@ -22,7 +22,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #8f4908;
+  background-color: #ac6522;
   z-index: 1000;
 }
 

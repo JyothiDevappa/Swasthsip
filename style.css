@@ -8,7 +8,7 @@ body, html {
   font-family: 'Poppins', sans-serif;
   height: 100%;
   overflow-x: hidden;
-      background-color: #405c2b;
+      background-color: #e6ebe2;
 
 }
 
@@ -133,7 +133,7 @@ header {
 /* PRODUCTS SECTION */
 
 .products {
-  background-color: #405c2b;
+  background-color: #94bd75;
   padding: 100px 40px;
   text-align: center;
 }
@@ -163,7 +163,7 @@ header {
 
 .section-subheading {
   font-size: 18px;
-  color: #f0c29c;
+  color: #85542c;
   margin: 20px auto 60px;
   max-width: 700px;
 }
@@ -271,8 +271,8 @@ header {
   align-items: center;            /* Center vertically */
   gap: 60px;                      /* More gap between left and right */
   padding: 60px 30px;
-    background-color: #405c2b;
-  color: white;
+    background-color: #8eb372;
+  color: rgb(38, 68, 36);
   flex-wrap: wrap;
   text-align: left;
 }
@@ -290,6 +290,7 @@ header {
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
+  color: rgb(211, 228, 195);
 }
 
 .quality-heading::after {
@@ -299,7 +300,7 @@ header {
   left: 0;
   width: 0;
   height: 3px;
-  background: white;
+  background: rgb(255, 255, 255);
   transition: width 0.5s ease;
 }
 
@@ -328,7 +329,7 @@ header {
 
 .quality-point p {
   font-size: 16px;
-  color: #ccc;
+  color: #794719;
   margin: 0;
   line-height: 1.7;              /* Relaxed spacing between lines */
   max-width: 100%;
@@ -391,7 +392,7 @@ header {
 }
 
 .feedback-section {
-    background-color: #405c2b;
+    background-color: #8ab16d;
   padding: 40px 0;
   
 }
