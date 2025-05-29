@@ -8,31 +8,45 @@
 
 </head>
 <body>
+
+  
   <!-- NAVBAR -->
   <header>
-
-   <div class="logo">
+<div class="logo">
   <a href="story.html">
-  
-  <img src="../assets/images/Swastip.png" alt="Swastip Logo"">
-
+    <img src="assets/images/Swastip.png" alt="Swastip Logo" />
   </a>
-  <span>SwasthSip</span>
+<span class="swasthsip-font">SwasthSip</span>
 </div>
 
     <nav class="navbar">
 <a href="index.html" class="nav-link active">Home</a>
-  <a href="#products">Products</a>
-  <a href="#quality">Quality</a>
-  <a href="#feedback">Feedback</a>
+  <a href="index.html#products">Products</a>
+  <a href="index.html#quality">Quality</a>
+  <a href="index.html#feedback">Feedback</a>
   <a href="contact.html">Contact</a>
-  
 </nav>
 
     <div class="hamburger">&#9776;</div>
+    
   </header>
 
+  <script>// hamburger section //
 
+    const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+
+// Toggle navbar on hamburger click
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
+// Hide navbar if clicked or touched outside
+document.addEventListener('mousedown', (event) => {
+  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+    navbar.classList.remove('active');
+  }
+});</script>
 
 
 
@@ -45,26 +59,26 @@
 
       <div class="info">
         <img src="assets/images/icons8-location-50 (1).png" alt="Location" />
-        <span>123 Green Leaf Street, Herbal City, Earth 56789</span>
+        <span>123 Street, bangalore City, pincode 56789</span>
       </div>
 
       <div class="info">
-        <img src="..\assets\images\icon-phone-.png" alt="Phone" />
+        <img src="assets\images\icon-phone-.png" alt="Phone" />
         <span>+91 8088121589</span>
       </div>
 
       <div class="info">
-        <img src="..\assets\images\gmail-icons.png" alt="Email" />
+        <img src="assets\images\gmail-icons.png" alt="Email" />
         <span>jyothidevappa@gmail.com</span>
       </div>
 
       <div class="info">
-        <img src="..\assets\images\icons8-website-50 (1).png" alt="Website" />
+        <img src="assets\images\icons8-website-50 (1).png" alt="Website" />
         <a href="https://yourwebsite.com" target="_blank">www.yourwebsite.com</a>
       </div>
 
       <a class="youtube-button" href="https://youtube.com/@yourchannel" target="_blank">
-        <img src="..\assets\images\youtube-icon.png" alt="YouTube" />
+        <img src="assets\images\youtube-icon.png" alt="YouTube" />
         Visit our YouTube
       </a>
     </div>
@@ -77,12 +91,12 @@
         <input type="hidden" name="_template" value="table">
 
         <div class="input-group">
-          <img src="..\assets\images\user-icon.png" alt="Name" />
+          <img src="assets\images\user-icon.png" alt="Name" />
           <input type="text" name="name" placeholder="Your Name" required />
         </div>
 
         <div class="input-group">
-          <img src="..\assets\images\gmail-icons.png" alt="Email" />
+          <img src="assets\images\gmail-icons.png" alt="Email" />
           <input type="email" name="email" placeholder="Your Email" required />
         </div>
 
@@ -122,19 +136,21 @@
 <footer class="footer">
   <div class="footer-icons">
     <a href="https://www.instagram.com" target="_blank">
-      <img src="../assets/images/icon-instagram.png" alt="Instagram">
+      <img src="assets/images/icon-instagram.png" alt="Instagram">
     </a>
     
     <a href="https://www.linkedin.com" target="_blank">
-      <img src="assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn">  
+      <img src="assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn">  </a>
 
     <a href="mailto:yourmail@gmail.com" target="_blank">
-      <img src="..\assets\images\icons8-gmail-64.png" alt="Gmail">
-    </a>                  
+      <img src="assets\images\icons8-gmail-64.png" alt="Gmail">
+    </a>      
+
     <a href="https://www.youtube.com/@yourchannel" target="_blank">
-      <img src="../assets/images/icons8-youtube-50.png" alt="YouTube">
+      <img src="assets/images/icons8-youtube-50.png" alt="YouTube">
     </a>
   </div>
+  
   <p>© 2023 SwasthSip. All Rights Reserved.</p>
 </footer>
 

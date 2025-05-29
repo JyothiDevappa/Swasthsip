@@ -53,7 +53,7 @@ header {
 
 @media (max-width: 768px) {
   .logo img {
-    height: 30px;
+    height: 40px;
   }
 
   .navbar {
