@@ -4,20 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products Details</title>
-
 <link rel="stylesheet" href="css/products.css" />
-
-
 </head>
 <body>
-
-  <!-- NAVBAR -->
+<!-- NAVBAR -->
   <header>
 
    <div class="logo">
   <a href="story.html">
   
-  <img src="../assets/images/Swastip.png" alt="Swastip Logo"">
+  <img src="../assets/images/Swastip.png" alt="Swastip Logo">
 
   </a>
   <span>SwasthSip</span>
@@ -36,7 +32,6 @@
   </header>
 
 
-  
 
   <!-- Product detail section -->
   <section class="product-detail">
@@ -138,18 +133,6 @@
     <p>Regular consumption of Amla Candy can support skin health, enhance metabolism, and promote detoxification. Free from artificial additives, it is a natural source of energy and wellness, making it a favorite among health-conscious individuals. Relish the perfect balance of sweet and sour with every bite.</p>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Explore more products section -->
 <section class="explore-section">
   <h2 class="explore-heading">Explore More Products</h2>
@@ -190,70 +173,6 @@
   </div>
 </section>
 
-
-
-<script src="script.js"></script>
-
-
-
-<script>
-
-// Product card slider arrows
-const slider = document.querySelector('.slider');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-const cards = document.querySelectorAll('.product-card');
-
-let visibleCards = 4;
-let currentIndex = 0;
-
-function getVisibleCards() {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= 768) return 1;
-  if (screenWidth <= 1024) return 2;
-  return 4;
-}
-
-function updateSlider() {
-  visibleCards = getVisibleCards();
-  const cardWidth = cards[0].offsetWidth + 20;
-  slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
-
-rightArrow?.addEventListener('click', () => {
-  currentIndex++;
-  if (currentIndex > cards.length - visibleCards) currentIndex = 0;
-  updateSlider();
-});
-
-leftArrow?.addEventListener('click', () => {
-  currentIndex--;
-  if (currentIndex < 0) currentIndex = cards.length - visibleCards;
-  updateSlider();
-});
-
-window.addEventListener('resize', updateSlider);
-updateSlider();
-
-
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('product');
-if (productId) {
-  const products = document.querySelectorAll('.product-detail');
-  products.forEach((product, index) => {
-    if ((index + 1).toString() === productId) {
-      product.style.display = 'block';
-      product.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      product.style.display = 'none';
-    }
-  });
-}
-
-</script>
-
-
-
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-icons">
@@ -273,19 +192,7 @@ if (productId) {
   </div>
   <p>© 2023 SwasthSip. All Rights Reserved.</p>
 </footer>
-
-<script src="../assets/js/script.js"></script> 
-
- <!-- <link rel="stylesheet" href="css/products.css" /> -->
-<script>
-
-const hamburger = document.querySelector('.hamburger');
-const navbar = document.querySelector('.navbar');
-hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
-
-</script>
+<script src="js/script.js"></script> 
 
 </body>
 </html>

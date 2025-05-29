@@ -124,24 +124,18 @@ header {
 }
 
 
-/* HERO */
-
-
-
-
-
 /* PRODUCTS SECTION */
-
 .products {
-  background-color: #94bd75;
+  background-color: #fef7ee; /* soft creamy beige */
   padding: 100px 40px;
   text-align: center;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* optional: wood texture */
 }
 
 .section-heading {
   font-size: 42px;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: #7b3f16; /* deep brown heading */
   position: relative;
   display: inline-block;
   margin-bottom: 10px;
@@ -152,7 +146,7 @@ header {
   display: block;
   width: 60%;
   height: 3px;
-  background: white;
+  background: #e0b18b; /* light beige underline */
   margin: 8px auto 0;
   transition: width 0.4s ease;
 }
@@ -163,15 +157,10 @@ header {
 
 .section-subheading {
   font-size: 18px;
-  color: #85542c;
+  color: #8b5a3c; /* warm brown subtitle */
   margin: 20px auto 60px;
   max-width: 700px;
 }
-
-
-
-
-
 
 /* GRID STYLES */
 .product-grid {
@@ -182,30 +171,33 @@ header {
 
 /* PRODUCT CARD */
 .product-card {
-  background: white;
-  border-radius: 16px;
+  background: #fffaf4; /* creamy white card */
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  padding: 20px;
 }
 
 .product-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 16px;
 }
 
 .product-name {
   font-weight: bold;
-  font-size: 18px;
-  margin: 10px 0 20px;
-  color: #222;
+  font-size: 20px;
+  margin: 16px 0 10px;
+  color: #7b3f16; /* medium brown text */
+  text-align: center;
 }
 
 /* OVERLAY BUTTON */
@@ -215,12 +207,13 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(17, 17, 17, 0.6);
+  background: rgba(30, 15, 5, 0.5); /* dark overlay */
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.4s ease;
+  border-radius: 20px;
 }
 
 .product-card:hover .overlay {
@@ -240,8 +233,10 @@ header {
 }
 
 .product-card button:hover {
-  border-color: #ccc;
+  border-color: #fce3c1;
 }
+
+
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
@@ -264,15 +259,14 @@ header {
   }
 }
 
-
 .quality-section {
   display: flex;
-  justify-content: center;         /* Center horizontally */
-  align-items: center;            /* Center vertically */
-  gap: 60px;                      /* More gap between left and right */
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
   padding: 60px 30px;
-    background-color: #8eb372;
-  color: rgb(38, 68, 36);
+  background-color: #eef7ee;        /* soft pale green */
+  color: #3e5d3a;                   /* earthy green for general text */
   flex-wrap: wrap;
   text-align: left;
 }
@@ -281,7 +275,7 @@ header {
 .quality-text {
   flex: 1;
   min-width: 280px;
-  max-width: 600px;               /* Limit width for neatness */
+  max-width: 600px;
 }
 
 .quality-heading {
@@ -290,7 +284,7 @@ header {
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
-  color: rgb(211, 228, 195);
+  color: #4b6e3f;                  /* darker green heading */
 }
 
 .quality-heading::after {
@@ -300,7 +294,7 @@ header {
   left: 0;
   width: 0;
   height: 3px;
-  background: rgb(255, 255, 255);
+  background: #aacfa2;             /* soft mint underline */
   transition: width 0.5s ease;
 }
 
@@ -312,7 +306,7 @@ header {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  margin-bottom: 30px;           /* More gap between points */
+  margin-bottom: 30px;
 }
 
 .quality-point img {
@@ -324,14 +318,15 @@ header {
 .quality-point h3 {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;           /* Gap between heading and paragraph */
+  margin-bottom: 10px;
+  color: #3c5b30;                  /* darker subheadings */
 }
 
 .quality-point p {
   font-size: 16px;
-  color: #794719;
+  color: #5f733f;                  /* soft green-brown text */
   margin: 0;
-  line-height: 1.7;              /* Relaxed spacing between lines */
+  line-height: 1.7;
   max-width: 100%;
 }
 
@@ -369,7 +364,7 @@ header {
 .section-title {
   font-size: 32px;
   font-weight: bold;
-  color: #f1831c; /* leaf green */
+  color: #d86c4a; /* warm terracotta */
   position: relative;
   display: inline-block;
   margin-bottom: 20px;
@@ -383,7 +378,7 @@ header {
   height: 4px;
   bottom: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: #fff5e9; /* soft light beige */
   transition: width 0.4s ease;
 }
 
@@ -392,9 +387,8 @@ header {
 }
 
 .feedback-section {
-    background-color: #8ab16d;
+  background-color: #ffe9d6; /* soft peachy-beige */
   padding: 40px 0;
-  
 }
 
 .feedback-container {
@@ -413,7 +407,7 @@ header {
 }
 
 .arrow {
-  background-color: #007B5E;
+  background-color: #b45f3d; /* muted clay orange */
   color: white;
   border: none;
   font-size: 24px;
@@ -424,7 +418,7 @@ header {
 }
 
 .arrow:hover {
-  background-color: #00513f;
+  background-color: #944c31;
 }
 
 .carousel-outer {
@@ -446,7 +440,7 @@ header {
   left: 100%;
   width: 100%;
   height: 100%;
-  background-color: #e0e0e0;
+  background-color: #fff5e9; /* soft beige */
   border-radius: 15px;
   padding: 20px;
   text-align: center;
@@ -483,22 +477,25 @@ header {
 
 .feedback-card p {
   font-style: italic;
-  color: #333;
+  color: #4a3f35; /* warm brown-gray */
   margin-bottom: 10px;
 }
 
 .feedback-card h4 {
   margin-top: 5px;
   font-weight: bold;
-  color: #007B5E;
+  color: #d86c4a; /* same warm terracotta as title */
 }
 
-/* contact section */
-.feedback-note {
-  margin: 25px 0 15px;
-  font-size: 1.1rem;
-  color: #aaffaa;
 
+
+/* contact section  form */
+
+
+#slide4 {
+  background-color: #f9f3ee; /* soft beige background */
+  padding: 60px 20px;
+  color: #5e4635; /* warm brown text */
 }
 
 .feedback-form {
@@ -507,22 +504,24 @@ header {
   gap: 15px;
   max-width: 450px;
   margin: 0 auto;
-
 }
 
+/* Input + TextArea Fields */
 .feedback-form input,
 .feedback-form textarea {
   padding: 12px;
   border: none;
   border-radius: 8px;
-  color: white;
+  color: #4a3f35;
+  background-color: #fff1e6; /* muted peach */
   font-size: 1rem;
   resize: none;
-
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
+/* Button */
 .feedback-form button {
-  background: #6ac045;
+  background: #db8966; /* soft terracotta/peach */
   border: none;
   padding: 12px;
   border-radius: 8px;
@@ -533,169 +532,111 @@ header {
 }
 
 .feedback-form button:hover {
-  background: #558d36;
+  background: #c47656;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 600px) {
-  .contact-ti
   .feedback-note {
     font-size: 1rem;
-    
   }
 
   .feedback-form input,
   .feedback-form textarea,
   .feedback-form button {
     font-size: 0.95rem;
-
   }
 }
 
-
-
-
-
-/* Bigger font for first main pic slide*/
-
-.caption {
-  font-size: 64px;             /* Bigger font */
-  font-weight: bold;
-  text-align: center;
-  margin-top: 150px;
-  width: 100vw;                /* Full width of screen */
-  letter-spacing: 2px;
+/* Input Box Styles */
+.input-box {
   display: flex;
-  justify-content: center;
-  gap: 20px;                   /* More space between words */
-  flex-wrap: wrap;
-  padding: 0 20px;             /* Small side padding */
-  box-sizing: border-box;
+  align-items: center;
+  border-bottom: 1px solid #e7d9c9;
+  margin-bottom: 25px;
+  padding: 10px 5px;
+  transition: border-color 0.3s;
 }
 
-/* Welcome To — Agriculture green */
-.welcome-text {
-  color: #ffffff; /* Forest Green */
-  opacity: 0;
-  animation: fadeInLeft 1s ease forwards;
+.input-box:hover {
+  border-color: #e9bfa3;
 }
 
-/* Swastip — Soil/Brownish orange */
-.swastip-text {
-  color: #ffffff; /* Forest Green */
-  opacity: 0;
-  animation: fadeInRight 1s ease forwards;
-  animation-delay: 1s;
+.input-box img {
+  width: 20px;
+  margin-right: 12px;
+  filter: brightness(0) saturate(100%) sepia(20%) hue-rotate(10deg);
+  transition: transform 0.3s ease;
 }
 
-/* Animations */
-@keyframes fadeInLeft {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
+.input-box:hover img {
+  transform: scale(1.2);
 }
 
-@keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(50px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-/* Optional: glowing hover */
-.welcome-text:hover,
-.swastip-text:hover {
-  text-shadow: 2px 2px 12px #88ff88;
-  transform: scale(1.05);
-  transition: 0.1s ease;
-}
-
-
-
-
-  .input-box {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #b4b3b3;
-    margin-bottom: 25px;
-    padding: 10px 5px;
-    transition: border-color 0.3s;
-
-  }
-
-  .input-box:hover {
-    border-color: #b1e478;
-  }
-
-  .input-box img {
-    width: 20px;
-    margin-right: 12px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
-  }
-
-  .input-box:hover img {
-    transform: scale(1.2);
-  }
-
-  .input-box input,
+.input-box input,
 .input-box textarea {
   border: none;
   outline: none;
   flex: 1;
   font-size: 16px;
-  color: white;
+  color: #5a4a42;
   padding: 8px;
   background-color: transparent;
-
 }
 
+textarea {
+  resize: vertical;
+  height: 80px;
+}
 
-  textarea {
-    resize: vertical;
-    height: 80px;
-  }
+/* Submit Button */
+.submit-btn {
+  background-color: #c47f4b; /* warm tan */
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-  .submit-btn {
-    background-color: #96641a;
-    color: white;
-    border: none;
-    padding: 14px 24px;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
+.submit-btn img {
+  width: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
 
-  .submit-btn img {
-    width: 20px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
-  }
+.submit-btn:hover {
+  background-color: #e69b6b;
+  transform: scale(1.05);
+}
 
-  .submit-btn:hover {
-    background-color: #ec9e0d;
-    transform: scale(1.05);
-  }
+.submit-btn:hover img {
+  transform: translateX(5px);
+}
 
-  .submit-btn:hover img {
-    transform: translateX(5px);
-  }
+/* Form Feedback Messages */
+#formLoader,
+#formSuccess,
+#formError {
+  margin-top: 20px;
+  display: none;
+  font-size: 14px;
+}
 
-  #formLoader,
-  #formSuccess,
-  #formError {
-    margin-top: 20px;
-    display: none;
-    font-size: 14px;
-  }
-
-  #formLoader { color: blue; }
-  #formSuccess { color: green; }
-  #formError { color: red; }
-
+#formLoader { color: #7469b6; }
+#formSuccess { color: #3fa86f; }
+#formError { color: #d86464; }
 
 .input-box input::placeholder {
-  color: #adaaaa; /* darker gray or choose another color */
+  color: #a99d95;
 }
+
+
+
 
 
 
@@ -734,6 +675,9 @@ header {
 
 
 
+
+
+/*   first slide */
 .hero {
   position: relative;
   overflow: hidden;
@@ -843,4 +787,48 @@ header {
   .right-arrow {
     right: 20px;
   }
+}
+
+
+/* Bigger font for first main pic slide*/
+
+.caption {
+  font-size: 64px;             /* Bigger font */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 150px;
+  width: 100vw;                /* Full width of screen */
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;                   /* More space between words */
+  flex-wrap: wrap;
+  padding: 0 20px;             /* Small side padding */
+  box-sizing: border-box;
+}
+
+/* Welcome To — Agriculture green */
+.welcome-text {
+  color: #ffffff; /* Forest Green */
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+/* Swastip — Soil/Brownish orange */
+.swastip-text {
+  color: #ffffff; /* Forest Green */
+  opacity: 0;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
 }

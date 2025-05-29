@@ -1,16 +1,15 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
 
 body {
-  font-family: 'Segoe UI', sans-serif;
   height: 100%;
   overflow-x: hidden;
-            background: #91a55f ;
-
+  background-color: #fef7ee; /* soft creamy beige */
+  color: #333; /* Default readable text color */
 }
 
 /* HEADER */
@@ -22,15 +21,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ac6522;
+  background-color: #8b5a3c; /* warm brown subtitle */
   z-index: 1000;
+
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(220, 248, 175);
+  color: #f4ffe4;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -42,24 +42,13 @@ header {
   object-fit: contain;
 }
 
-@media (max-width: 768px) {
-  .logo img {
-    height: 30px;
-  }
-
-  .navbar {
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-}
-
 .navbar {
   display: flex;
   gap: 30px;
 }
 
 .navbar a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
@@ -89,11 +78,17 @@ header {
   color: white;
   cursor: pointer;
 }
-@media screen and (max-width: 768px) {
+
+/* MOBILE NAVBAR */
+@media (max-width: 768px) {
+  .logo img {
+    height: 30px;
+  }
+
   .navbar {
     display: none;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 70px;
     right: 20px;
@@ -118,21 +113,19 @@ header {
 
 /* PRODUCT DETAIL SECTION */
 .product-detail {
-  margin-top: 20px; /* Enough to push content below the fixed header */
+  margin-top: 90px; /* Below fixed header */
   padding: 70px;
   border-radius: 20px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
   max-width: 950px;
   margin-left: auto;
   margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.8); /* light background for readability */
 }
 
 .product-detail h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  margin-top: 30px;
-  color: #e9dddd;
+  color: #3e4a1d;
   text-align: center;
 }
 
@@ -140,8 +133,7 @@ header {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 8px;
   margin-top: 40px;
   margin-bottom: 10px;
   transition: transform 0.4s ease;
@@ -156,18 +148,19 @@ header {
   line-height: 1.7;
   margin-bottom: 20px;
   text-align: justify;
+  color: #2e2e2e;
 }
 
 .product-detail h2 {
-  color: #e7895d;
+  color: #6c9535;
   font-size: 1.4em;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
 .product-detail ul {
-  list-style-type: none;
-  padding-left: 0;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 .product-detail ul li {
@@ -175,13 +168,22 @@ header {
   font-size: 1.1em;
 }
 
-/* Explore Section */
+/* Responsive padding for product detail */
+@media (max-width: 600px) {
+  .product-detail {
+    padding: 20px;
+  }
+}
+
+/* EXPLORE SECTION */
 .explore-heading {
   text-align: center;
   margin-bottom: 25px;
+  font-size: 1.8em;
+  color: #3a4d1f;
 }
 
-/* Product Cards */
+/* PRODUCT CARDS */
 .product-grid {
   display: flex;
   flex-wrap: wrap;
@@ -190,7 +192,7 @@ header {
 }
 
 .product-card {
-  width: 140px;
+  flex: 0 0 calc(25% - 20px); /* 4 cards in row */
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -199,32 +201,27 @@ header {
   text-decoration: none;
   color: black;
   transition: box-shadow 0.3s ease;
+  background-color: #fefefe;
 }
 
 .product-card img {
   width: 100%;
   height: auto;
+  border-radius: 8px 8px 0 0;
   display: block;
 }
 
 .product-card p {
   margin: 10px 0;
   font-weight: bold;
+  color: #3d3d3d;
 }
 
 .product-card:hover {
   box-shadow: 0 0 10px #888;
 }
 
-
-
-
-
-
-
-/*  explore more cards */
-
-
+/* SLIDER / Explore More Section */
 .explore-wrapper {
   display: flex;
   align-items: center;
@@ -244,18 +241,6 @@ header {
   gap: 20px;
 }
 
-.product-card {
-  flex: 0 0 calc(25% - 20px); /* 4 cards in row */
-  text-align: center;
-  text-decoration: none;
-  color: black;
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
 .arrow {
   background-color: transparent;
   border: none;
@@ -265,6 +250,7 @@ header {
   z-index: 10;
 }
 
+/* Responsive Card Widths */
 @media (max-width: 1024px) {
   .product-card {
     flex: 0 0 calc(50% - 20px); /* 2 cards per row */
@@ -277,18 +263,13 @@ header {
   }
 }
 
-
-
-/* footer */
-
+/* FOOTER */
 .footer {
-  background-color: #0d1d04;
+  background-color: #263a1d;
   color: #ccc;
   text-align: center;
   padding: 15px 10px;
-  bottom: 0;
   width: 100%;
-  z-index: 999;
 }
 
 .footer-icons {
