@@ -9,6 +9,7 @@ body, html {
   height: 100%;
   overflow-x: hidden;
   background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* optional: wood texture */
+  padding-top: 70px; /* space for header */
 
 }
 
@@ -142,7 +143,7 @@ html {
   margin-bottom: 10px;
   color: #3e4a1d;
   text-align: center;
-  margin-top: 120px; /* was 90px, increase a bit more */
+  margin-top: 40px; /* was 90px, increase a bit more */
 
 }
 
@@ -343,3 +344,5 @@ html {
     cursor: pointer;
   }
 }
+
+

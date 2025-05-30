@@ -291,8 +291,8 @@ a {
 }
 
 .section-subheading {
-  font-size: 18px;
-  color: #8b5a3c; /* warm brown subtitle */
+  font-size: 25px;
+  color: #b14a0a; /* warm brown subtitle */
   margin: 20px auto 60px;
   max-width: 700px;
 }
@@ -390,7 +390,7 @@ a {
   }
 
   .section-subheading {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
@@ -803,6 +803,15 @@ textarea {
   margin: 0;
 }
 
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
 
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
