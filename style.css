@@ -706,11 +706,36 @@ textarea {
   z-index: 1;
 }
 
+
+
+
+/* Common caption style */
 .caption {
   position: absolute;
   color: white;
   font-weight: bold;
-  display: block;
+  width: 100vw;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Text animations */
+.welcome-text {
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.swastip-text {
+  color: #ceb7a1;
+  opacity: 0;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 1s;
 }
 
 /* DESKTOP */
@@ -718,10 +743,12 @@ textarea {
   .caption {
     bottom: 30%;
     left: 10%;
-    font-size: 42px;
+    transform: none;
+    font-size: 45px;
     line-height: 1.1;
+    align-items: flex-start;
     text-align: left;
-    max-width: 600px;
+    gap: 5px; /* Optional space between lines */
   }
 
   .caption span {
@@ -729,34 +756,31 @@ textarea {
     width: max-content;
   }
 
-  
-  /* Second line centered under the first line */
   .caption .swastip-text {
-        text-align: left;
-
+    text-align: left;
   }
 }
 
 /* MOBILE */
 @media only screen and (max-width: 768px) {
   .caption {
-    top: 20%;
+    top: 40%;
     bottom: auto;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 45px;
-    max-width: 90%;
+    font-size: 38px;
     line-height: 1.3;
     text-align: center;
+    align-items: center;
+    max-width: 90%;
+    gap: 5px; /* Reduced gap for better spacing */
   }
 
   .caption .welcome-text,
   .caption .swastip-text {
     text-align: center;
     margin: 0 auto;
-        line-height: 1.2;
-
-
+    
   }
 }
 
@@ -793,38 +817,6 @@ textarea {
 }
 
 
-/* Bigger font for first main pic slide*/
-
-.caption {
-  font-size: 64px;             /* Bigger font */
-  font-weight: bold;
-  text-align: center;
-  margin-top: 150px;
-  width: 100vw;                /* Full width of screen */
-  letter-spacing: 2px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;                   /* More space between words */
-  flex-wrap: wrap;
-  padding: 0 20px;             /* Small side padding */
-  box-sizing: border-box;
-}
-
-/* Welcome To — Agriculture green */
-.welcome-text {
-  color: #ffffff; /* Forest Green */
-  opacity: 0;
-  animation: fadeInLeft 1s ease forwards;
-}
-
-/* Swastip — Soil/Brownish orange */
-.swastip-text {
-  color: #ffffff; /* Forest Green */
-  opacity: 0;
-  animation: fadeInRight 1s ease forwards;
-  animation-delay: 1s;
-}
-
 /* Animations */
 @keyframes fadeInLeft {
   0% { opacity: 0; transform: translateX(-50px); }
@@ -834,4 +826,12 @@ textarea {
 @keyframes fadeInRight {
   0% { opacity: 0; transform: translateX(50px); }
   100% { opacity: 1; transform: translateX(0); }
+}
+
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

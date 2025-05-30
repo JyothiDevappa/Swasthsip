@@ -78,7 +78,7 @@ header {
 
 /* PAGE TITLE */
 .page-title {
-  font-size: 38px;
+  font-size: 40px;
   text-align: center;
   margin-top: 40px;
   color: #435334;
@@ -328,17 +328,18 @@ button:hover {
   }
 
   .page-title {
-    font-size: 28px;
+    font-size: 35px;
     margin-top: 60px;
   }
 
   .description {
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 20px;
+    margin-top: 25px;
   }
 
   .container {
-    padding: 0 15px;
+    padding: 0px 20px;
+
   }
 
   input, textarea {
@@ -350,7 +351,49 @@ button:hover {
     background-color: #8b5e3c;
     color: white;
   }
+
+
+.youtube-button {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  background-color: #6f4f2a;
+  color: #fff;
+  font-weight: 500;
 }
+
+.youtube-button img {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+
+.left, .right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.left h1, .right h1 {
+  color: #435334; /* olive green */
+  margin-top: 32px;
+  margin-bottom: 30px;
+  font-size: 28px;
+  position: relative;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
