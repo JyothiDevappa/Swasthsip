@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us </title>
-    <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="contact.css" />
 
 </head>
+
 <body>
 
-  
+
   <!-- NAVBAR -->
   <header>
-<div class="logo">
-  <a href="story.html">
-    <img src="assets/images/Swastip.png" alt="Swastip Logo" />
-  </a>
-<span class="swasthsip-font">SwasthSip</span>
-</div>
+    <div class="logo">
+      <a href="story.html">
+        <img src="assets/images/Swastip.png" alt="Swastip Logo" />
+      </a>
+      <span class="swasthsip-font">SwasthSip</span>
+    </div>
 
     <nav class="navbar">
-<a href="index.html" class="nav-link active">Home</a>
-  <a href="index.html#products">Products</a>
-  <a href="index.html#quality">Quality</a>
-  <a href="index.html#feedback">Feedback</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#quality">Quality</a>
+      <a href="index.html#feedback">Feedback</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
     <div class="hamburger">&#9776;</div>
-    
+
   </header>
 
   <script>// hamburger section //
 
     const hamburger = document.querySelector('.hamburger');
-const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('.navbar');
 
-// Toggle navbar on hamburger click
-hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
+    // Toggle navbar on hamburger click
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
 
-// Hide navbar if clicked or touched outside
-document.addEventListener('mousedown', (event) => {
-  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
-    navbar.classList.remove('active');
-  }
-});</script>
+    // Hide navbar if clicked or touched outside
+    document.addEventListener('mousedown', (event) => {
+      if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+        navbar.classList.remove('active');
+      }
+    });</script>
 
 
 
   <h1 class="page-title"><span>Contact Us</span></h1>
-      <h2 class="description">"We’re here to answer your questions and help you connect with us easily."</h2>
+  <h2 class="description">"We’re here to answer your questions and help you connect with us easily."</h2>
 
   <div class="container">
     <div class="left">
@@ -132,27 +134,28 @@ document.addEventListener('mousedown', (event) => {
 
 
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-icons">
-    <a href="https://www.instagram.com" target="_blank">
-      <img src="assets/images/icon-instagram.png" alt="Instagram">
-    </a>
-    
-    <a href="https://www.linkedin.com" target="_blank">
-      <img src="assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn">  </a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="assets/images/icon-instagram.png" alt="Instagram">
+      </a>
 
-    <a href="mailto:yourmail@gmail.com" target="_blank">
-      <img src="assets\images\icons8-gmail-64.png" alt="Gmail">
-    </a>      
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn"> </a>
 
-    <a href="https://www.youtube.com/@yourchannel" target="_blank">
-      <img src="assets/images/icons8-youtube-50.png" alt="YouTube">
-    </a>
-  </div>
-  
-  <p>© 2023 SwasthSip. All Rights Reserved.</p>
-</footer>
+      <a href="mailto:yourmail@gmail.com" target="_blank">
+        <img src="assets\images\icons8-gmail-64.png" alt="Gmail">
+      </a>
+
+      <a href="https://www.youtube.com/@yourchannel" target="_blank">
+        <img src="assets/images/icons8-youtube-50.png" alt="YouTube">
+      </a>
+    </div>
+
+    <p>© 2023 SwasthSip. All Rights Reserved.</p>
+  </footer>
 
 </body>
+
 </html>

@@ -4,156 +4,252 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Story - SwasthSip</title>
-  <meta name="description" content="Discover the story behind SwasthSip - a journey of tradition, care, and nourishment in every sip." />
-  <meta name="keywords" content="SwasthSip, Our Story, Healthy Drinks, Tradition, Care, Nourishment" />
-  <meta name="author" content="SwasthSip Team" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.swasthsip.in/our-story.html" />
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/styles.css" />
 
   <style>
-    body {
-      background-color: #fdfaf6; /* Soft wheat background */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
     }
 
-    main.container {
-      background-color: #fff9f0; /* Light grain box */
+    body {
+      background: linear-gradient(to bottom right, #fef7ee, #f1e8db);
+      color: #3e2f1c;
+      padding-top: 80px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #8b5e3c;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e5f3c3;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .logo img {
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: #fffbe6;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #e0d6c3;
+      left: 0;
+      bottom: 0;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .container.story {
+      max-width: 700px;
+      margin: auto;
+      background-color: #fff9f0;
+      padding: 2rem;
       border-radius: 12px;
-      /* padding: 0.5rem 0.5rem; */
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
     }
 
-    .brand-highlight {
-      background: linear-gradient(90deg, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    }
-
-    h1, h2, .display-5 {
+    h1 {
       font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: #3c2f2f;
+      font-size: 1.75rem;
     }
 
-    p, .lead, .fw-bold {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.05rem;
+    p {
       line-height: 1.75;
-      color: #5e4b3c;
+      font-size: 1.05rem;
     }
 
-    .lead {
-      font-weight: 500;
-      color: #443322;
+    @media (max-width: 768px) {
+      .navbar {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: black;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 10px;
+        display: none;
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
     }
 
-    .justified p {
-      text-align: justify;
-    }
+    .footer {
+  background-color: #102216;
+  color: #cccccc;
+  text-align: center;
+  padding: 15px 10px;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
 
-    .col-12.text-center.mb-4 p {
-      color: #7a6e63;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 8px;
+}
 
-    .fw-bold.fs-5 {
-      color: #3f7d3a;
-      margin-top: 2rem;
-    }
+.footer-icons img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <div id="header"></div>
-
-  <main class="container my-5 px-md-5">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <h1 class="fw-bold text-success text-center mb-2" style="font-size: 1.75rem; padding-top: 0;">🌿 The Heartbeat Behind SwasthSip</h1>
-
-        <p class="text-muted text-center fs-5 fst-italic mb-5">A return to care. A ritual of well-being.</p>
-  
-        <p class="lead mb-4">
-          In the heart of Bangalore’s relentless pace — where metro trains rush by, cars honk endlessly, and life often feels like a never-ending race — there’s a quiet longing. A longing for something real, gentle, and grounding; a taste of home and care amidst the chaos.
-        </p>
-  
-        <p class="mb-4">
-          <strong>SwasthSip</strong> was born from that longing. It’s more than just a drink — it’s a whisper of love from a time when life was slower, and care was present in every meal, every sip. When a mother lovingly stirred wholesome goodness early in the morning, she wasn’t just feeding a body — she was nurturing a soul, building strength, and offering comfort that words can’t capture.
-        </p>
-  
-        <p class="mb-4">
-          Today, in a city of start-ups, deadlines, and constant motion, that kind of care feels rare. But it doesn’t have to be lost. <strong>SwasthSip</strong> brings it back — not as a memory, but as a daily ritual.  
-        </p>
-  
-        <p class="mb-4">
-          A sacred pause.  
-          A moment to reconnect with nature, with tradition, and with yourself.
-        </p>
-  
-        <p class="mb-4">
-          Whether you’re a growing child, a sleep-deprived student, a busy IT professional, or a wise elder — <strong>SwasthSip</strong> is for you.  
-          It’s a warm embrace in a cup, made to nourish every generation with natural energy and balanced health.
-        </p>
-  
-        <p class="mb-4">
-          No shortcuts. No additives. Just heritage, carefully brewed into modern life.
-        </p>
-  
-        <p class="mb-4">
-          Because here, tradition isn’t just an old recipe — it’s a living promise:
-          <br>
-          To restore balance, to energize naturally, to heal gently.
-        </p>
-  
-        <p class="mb-4">
-          Even in a city that never stops, your body and spirit deserve a moment to pause… and breathe.
-        </p>
-  
-        <p class="mb-4">
-          <i class="bi bi-heart-fill text-danger"></i> <i>SwasthSip is not just a drink. It’s a return to care.</i>
-
-          <br>
-          <span style="color: #8b5e3c;">
-            <i class="bi-heart-fill" style="color: #4CAF50;"></i>
-            A gentle reminder that well-being is not a luxury — it’s your birthright.
-          </span>
-          
-        </p>
-        
-        <p class="fs-5 fw-bold mt-4 mb-5" style="color: #d47c42;">
-          <b>Take a sip. Feel the difference. Find yourself again.</b>
-        </p>
-        
-      </div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="story.html">
+        <img src="assets/images/Swastip.png" alt="Swastip Logo" />
+      </a>
+      <span>SwasthSip</span>
     </div>
+    
+    <nav class="navbar">
+<a href="index.html" class="nav-link active">Home</a>
+  <a href="index.html#products">Products</a>
+  <a href="index.html#quality">Quality</a>
+  <a href="index.html#feedback">Feedback</a>
+  <a href="contact.html">Contact</a>
+</nav>
+    <div class="hamburger"><i class="bi bi-list"></i></div>
+  </header>
+
+  <!-- STORY -->
+  <main class="container story mt-4">
+    <h1 class="text-success text-center mb-2">🌿 The Heartbeat Behind SwasthSip</h1>
+    <p class="text-muted text-center fs-5 fst-italic mb-5">A return to care. A ritual of well-being.</p>
+
+    <p>In the heart of Bangalore’s relentless pace, where traffic honks and deadlines echo louder than our own heartbeat, SwasthSip was born out of a longing—a longing for the gentle rhythm of care we once knew.</p>
+
+    <p><strong>SwasthSip</strong> was born from that longing. From the kitchens of our childhood, where turmeric wasn't a trend but a tradition, where every seed and spice had a reason—and every sip had a purpose.</p>
+
+    <p>Today, in a city of start-ups and all-night workathons, SwasthSip arrives not as a memory, but as a daily ritual. A sacred pause. A moment to reconnect with nature, with tradition, and with yourself.</p>
+
+    <p>Whether you’re a growing child needing nourishment, a parent seeking balance, or a senior seeking strength, SwasthSip is crafted with ingredients that have been trusted for generations—made to nourish every generation with natural energy and balanced health.</p>
+
+    <p>No shortcuts. No additives. Just heritage, carefully brewed into modern life.</p>
+
+    <p>Because here, tradition isn’t just an old recipe — it’s a living promise. A daily act of care. A quiet revolution in a bottle.</p>
+
+    <p>Even in a city that never stops, your body and spirit deserve a moment to pause… and breathe.</p>
+
+    <p>
+      <i class="bi bi-heart-fill text-danger"></i>
+      <i>SwasthSip is not just a drink. It’s a return to care.</i><br>
+      <span style="color: #8b5e3c;">
+        <i class="bi-heart-fill" style="color: #4CAF50;"></i>
+        A gentle reminder that well-being is not a luxury — it’s your birthright.
+      </span>
+    </p>
+
+    <p class="fs-5 fw-bold mt-4" style="color: #d47c42;">
+      <b>Take a sip. Feel the difference. Find yourself again.</b>
+    </p>
   </main>
-  
-  
-  
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-  <!-- Footer -->
-  <div id="footer"></div>
-
+  <!-- JS for Hamburger -->
   <script>
-    $(function () {
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    document.addEventListener('mousedown', (event) => {
+      if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+        navbar.classList.remove('active');
+      }
     });
   </script>
+
+  
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-icons">
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="assets/images/icon-instagram.png" alt="Instagram">
+    </a>
+    
+    <a href="https://www.linkedin.com" target="_blank">
+      <img src="assets/images/icons8-linkedin-50 (1).png" alt="LinkedIn">  </a>
+
+    <a href="mailto:yourmail@gmail.com" target="_blank">
+      <img src="assets\images\icons8-gmail-64.png" alt="Gmail">
+    </a>                  
+    <a href="https://www.youtube.com/@yourchannel" target="_blank">
+      <img src="assets/images/icons8-youtube-50.png" alt="YouTube">
+    </a>
+  </div>
+  <p>© 2023 SwasthSip. All Rights Reserved.</p>
+</footer>
 </body>
 </html>

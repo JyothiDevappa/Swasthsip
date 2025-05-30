@@ -29,6 +29,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  
 }
 
 
@@ -62,15 +63,13 @@ header {
   }
 }
 
-
-
 .navbar {
   display: flex;
   gap: 30px;
 }
 
 .navbar a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
@@ -123,6 +122,142 @@ header {
   
 }
 
+
+/*   first slide */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Caption common */
+.caption {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  width: 100vw;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: 2px;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Special colors for first slide */
+.welcome-text {
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.swastip-text {
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Desktop View */
+@media only screen and (min-width: 769px) {
+  .caption {
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    line-height: 1.1;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+  .caption {
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+    gap: 4px;
+    max-width: 90%;
+    align-items: center;
+  }
+}
+
+/* Arrows */
+.arrow {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 3.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+  .left-arrow,
+  .right-arrow {
+    display: block;
+    bottom: 50px;
+  }
+
+  .left-arrow {
+    left: 20px;
+  }
+
+  .right-arrow {
+    right: 20px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* PRODUCTS SECTION */
 .products {
@@ -636,11 +771,6 @@ textarea {
 }
 
 
-
-
-
-
-
 .footer {
   background-color: #102216;
   color: #cccccc;
@@ -676,139 +806,3 @@ textarea {
 
 
 
-
-/*   first slide */
-.hero {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-}
-
-.slider {
-  position: relative;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  background-size: cover;
-  background-position: center;
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Caption common */
-.caption {
-  position: absolute;
-  color: white;
-  font-weight: bold;
-  width: 100vw;
-  padding: 0 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  letter-spacing: 2px;
-  gap: 10px;
-  align-items: center;
-}
-
-/* Special colors for first slide */
-.welcome-text {
-  color: #ffffff;
-  opacity: 0;
-  animation: fadeInLeft 1s ease forwards;
-}
-
-.swastip-text {
-  color: #ffffff;
-  opacity: 0;
-  animation: fadeInRight 1s ease forwards;
-  animation-delay: 1s;
-}
-
-/* Desktop View */
-@media only screen and (min-width: 769px) {
-  .caption {
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 48px;
-    line-height: 1.1;
-    text-align: center;
-    align-items: center;
-  }
-}
-
-/* Mobile View */
-@media only screen and (max-width: 768px) {
-  .caption {
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 40px;
-    line-height: 1.2;
-    text-align: center;
-    gap: 4px;
-    max-width: 90%;
-    align-items: center;
-  }
-}
-
-/* Arrows */
-.arrow {
-  color: white;
-  background: none;
-  border: none;
-  font-size: 3.5rem;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-}
-
-.left-arrow,
-.right-arrow {
-  position: absolute;
-}
-
-@media only screen and (max-width: 768px) {
-  .left-arrow,
-  .right-arrow {
-    display: block;
-    bottom: 50px;
-  }
-
-  .left-arrow {
-    left: 20px;
-  }
-
-  .right-arrow {
-    right: 20px;
-  }
-}
-
-/* Animations */
-@keyframes fadeInLeft {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(50px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
