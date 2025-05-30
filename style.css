@@ -706,10 +706,7 @@ textarea {
   z-index: 1;
 }
 
-
-
-
-/* Common caption style */
+/* Caption common */
 .caption {
   position: absolute;
   color: white;
@@ -719,12 +716,13 @@ textarea {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
   letter-spacing: 2px;
+  gap: 10px;
+  align-items: center;
 }
 
-/* Text animations */
+/* Special colors for first slide */
 .welcome-text {
   color: #ffffff;
   opacity: 0;
@@ -732,55 +730,37 @@ textarea {
 }
 
 .swastip-text {
-  color: #ceb7a1;
+  color: #ffffff;
   opacity: 0;
   animation: fadeInRight 1s ease forwards;
   animation-delay: 1s;
 }
 
-/* DESKTOP */
+/* Desktop View */
 @media only screen and (min-width: 769px) {
   .caption {
     bottom: 30%;
-    left: 10%;
-    transform: none;
-    font-size: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
     line-height: 1.1;
-    align-items: flex-start;
-    text-align: left;
-    gap: 5px; /* Optional space between lines */
-  }
-
-  .caption span {
-    display: block;
-    width: max-content;
-  }
-
-  .caption .swastip-text {
-    text-align: left;
+    text-align: center;
+    align-items: center;
   }
 }
 
-/* MOBILE */
+/* Mobile View */
 @media only screen and (max-width: 768px) {
   .caption {
     top: 40%;
-    bottom: auto;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 38px;
-    line-height: 1.3;
+    font-size: 40px;
+    line-height: 1.2;
     text-align: center;
-    align-items: center;
+    gap: 4px;
     max-width: 90%;
-    gap: 5px; /* Reduced gap for better spacing */
-  }
-
-  .caption .welcome-text,
-  .caption .swastip-text {
-    text-align: center;
-    margin: 0 auto;
-    
+    align-items: center;
   }
 }
 
@@ -816,7 +796,6 @@ textarea {
   }
 }
 
-
 /* Animations */
 @keyframes fadeInLeft {
   0% { opacity: 0; transform: translateX(-50px); }
@@ -827,8 +806,6 @@ textarea {
   0% { opacity: 0; transform: translateX(50px); }
   100% { opacity: 1; transform: translateX(0); }
 }
-
-
 
 
 a {
