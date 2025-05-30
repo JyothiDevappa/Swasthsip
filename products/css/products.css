@@ -2,45 +2,68 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-body {
+body, html {
+  font-family: 'Poppins', sans-serif;
   height: 100%;
   overflow-x: hidden;
-  background-color: #fef7ee; /* soft creamy beige */
-  color: #333; /* Default readable text color */
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* optional: wood texture */
+
+}
+
+.swasthsip-font {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* semi-bold */
+  letter-spacing: 0.05em;
+  font-style: normal;
 }
 
 /* HEADER */
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
-  padding: 5px 30px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #8b5a3c; /* warm brown subtitle */
   z-index: 1000;
-
+  background-color: #ad7745;
 }
+
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #f4ffe4;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
+
+
 .logo img {
-  height: 65px;
+  height: 65px; /* or 50px if you want bigger */
   width: auto;
   object-fit: contain;
 }
+
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 40px;
+  }
+
+  .navbar {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+
+
 
 .navbar {
   display: flex;
@@ -48,7 +71,7 @@ header {
 }
 
 .navbar a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
@@ -78,17 +101,11 @@ header {
   color: white;
   cursor: pointer;
 }
-
-/* MOBILE NAVBAR */
-@media (max-width: 768px) {
-  .logo img {
-    height: 30px;
-  }
-
+@media screen and (max-width: 768px) {
   .navbar {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0,0,0,0.9);
     position: absolute;
     top: 70px;
     right: 20px;
@@ -104,23 +121,20 @@ header {
     display: block;
   }
 
-  .caption {
-    font-size: 28px;
-    left: 5%;
-    bottom: 15%;
-  }
+  
 }
+
 
 /* PRODUCT DETAIL SECTION */
 .product-detail {
-
-margin-top: 110px;
-  padding: 70px;
+  padding-top: 12px; /* adjust if your header is bigger/smaller */
   border-radius: 20px;
   max-width: 950px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(255, 255, 255, 0.8); /* light background for readability */
+}
+html {
+  scroll-padding-top: 100px; /* adds offset when jumping to headings */
 }
 
 .product-detail h1 {
@@ -128,6 +142,8 @@ margin-top: 110px;
   margin-bottom: 10px;
   color: #3e4a1d;
   text-align: center;
+  margin-top: 120px; /* was 90px, increase a bit more */
+
 }
 
 .product-detail img {

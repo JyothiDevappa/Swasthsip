@@ -51,6 +51,7 @@ if (productId) {
   });
 }
 
+
  // hamburger section //
 
     const hamburger = document.querySelector('.hamburger');
