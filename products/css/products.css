@@ -3,13 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body, html {
+html, body {
   font-family: 'Poppins', sans-serif;
   height: 100%;
   overflow-x: hidden;
-  padding-top: 70px; /* space for header */
+  padding-top: 70px;
   background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .swasthsip-font {
@@ -17,8 +23,8 @@ body, html {
   font-weight: 600; /* semi-bold */
   letter-spacing: 0.05em;
   font-style: normal;
+  color: #daf0e1;
 }
-
 /* HEADER */
 header {
   position: absolute;
@@ -127,24 +133,24 @@ header {
 
 /* PRODUCT DETAIL SECTION */
 .product-detail {
-  padding-top: 12px; /* adjust if your header is bigger/smaller */
+  padding-top: 20px; /* same as header height */
   border-radius: 20px;
   max-width: 950px;
   margin-left: auto;
   margin-right: auto;
 }
+
 html {
   scroll-padding-top: 100px; /* adds offset when jumping to headings */
 }
-
 .product-detail h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
   color: #3e4a1d;
   text-align: center;
-  margin-top: 40px; /* was 90px, increase a bit more */
-
+  margin-top: 20px;
 }
+
 
 .product-detail img {
   width: 100%;
@@ -286,7 +292,9 @@ html {
   color: #fffcfc;
   text-align: center;
   padding: 8px 10px;
+  margin-top: auto;
 }
+
 
 /* Footer icons and styles unchanged */
 .footer-icons {
@@ -311,18 +319,6 @@ html {
   margin: 0;
 }
 
-/* Make footer sticky on mobile */
-@media (max-width: 767px) {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* Optional: add a little shadow for separation */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-    z-index: 1000; /* make sure it stays on top */
-  }
-}
 
 
 

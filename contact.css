@@ -5,12 +5,27 @@
   font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-body {
-  background: linear-gradient(to bottom right, #fef7ee, #f1e8db); /* soft beige gradient */
-  color: #3e2f1c; /* warm brown for text */
-  padding-top: 60px;
+.swasthsip-font {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* semi-bold */
+  letter-spacing: 0.05em;
+  font-style: normal;
+  color: #f2f7f4;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 60px; /* keep your existing top padding */
+  background: linear-gradient(to bottom right, #fef7ee, #f1e8db);
+  color: #3e2f1c;
+  margin: 0;
+}
 /* HEADER */
 header {
   position: fixed;
@@ -109,19 +124,21 @@ header {
 
 /* CONTAINER LAYOUT */
 .container {
+  flex: 1;  /* This makes container grow and push footer down */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
-  gap: 30px;
+  gap: 90px;
   margin-bottom: 50px;
   padding: 0 30px;
 }
 
+
 .left, .right {
   flex: 1;
-  min-width: 280px;
+  min-width: 380px;
 }
 
 .left h1, .right h1 {
@@ -369,15 +386,27 @@ button:hover {
 }
 
 /* FOOTER */
-
-
-
 .footer {
   background-color: #034d3b;
   color: #fffcfc;
   text-align: center;
   padding: 8px 10px;
+  position: relative;
+  width: 100%;
 }
+
+/* For small screen heights (optional), make footer fixed */
+@media (max-height: 600px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+}
+
 
 /* Footer icons and styles unchanged */
 .footer-icons {
@@ -402,15 +431,27 @@ button:hover {
   margin: 0;
 }
 
-/* Make footer sticky on mobile */
-@media (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left, .right {
+    width: 100%;
+    min-width: unset;
+  }
+  /* remove fixed footer to prevent overlap */
+}
+
+@media (max-height: 600px) {
   .footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    /* Optional: add a little shadow for separation */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-    z-index: 1000; /* make sure it stays on top */
+    z-index: 1000;
   }
 }
+
