@@ -27,64 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
-
-// fade animation for whole index.html // 
-
+// fade animation for whole index.html 
 const fadeElements = document.querySelectorAll('.scroll-fade');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-    fadeElements.forEach(el => {
-      observer.observe(el);
-    });
+fadeElements.forEach(el => {
+  observer.observe(el);
+});
 
-
-    // hamburger section //
-
-    const hamburger = document.querySelector('.hamburger');
+// hamburger section
+const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
 
-// Toggle navbar on hamburger click
 hamburger.addEventListener('click', () => {
   navbar.classList.toggle('active');
 });
 
-// Hide navbar if clicked or touched outside
 document.addEventListener('mousedown', (event) => {
   if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
     navbar.classList.remove('active');
   }
 });
 
-
-    // logic for products images link //
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('product');
-    if (productId) {
-      const products = document.querySelectorAll('.product-detail');
-      products.forEach((product, index) => {
-        if ((index + 1).toString() === productId) {
-          product.style.display = 'block';
-          product.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          product.style.display = 'none';
-        }
-      });
-    }
-  
-
-
-
-
-// Feedback form
+// feedback form (still working)
 document.getElementById('feedbackForm')?.addEventListener('submit', function (e) {
   e.preventDefault();
   const loader = document.getElementById('formLoader');
@@ -102,59 +74,99 @@ document.getElementById('feedbackForm')?.addEventListener('submit', function (e)
   }, 2500);
 });
 
-// feedback slide
-const cards = document.querySelectorAll('.feedback-card');
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
-  let current = 0;
-  let interval;
-
-  function showCard(index) {
-    cards.forEach((card, i) => {
-      card.classList.remove('active', 'exit-left');
-      if (i === index) {
-        card.classList.add('active');
-      }
-    });
-  }
-
-  function nextCard() {
-    cards[current].classList.remove('active');
-    cards[current].classList.add('exit-left');
-    current = (current + 1) % cards.length;
-    setTimeout(() => {
-      showCard(current);
-    }, 50); 
-  }
-
-  function prevCard() {
-    cards[current].classList.remove('active');
-    cards[current].classList.add('exit-left');
-    current = (current - 1 + cards.length) % cards.length;
-    setTimeout(() => {
-      showCard(current);
-    }, 50);
-  }
-
-  function startAutoSlide() {
-    interval = setInterval(nextCard, 3000); // change every 3 seconds
-  }
-
-  function stopAutoSlide() {
-    clearInterval(interval);
-  }
-
-  leftArrow.addEventListener('click', () => {
-    stopAutoSlide();
-    prevCard();
-    startAutoSlide();
+// logic for products images link
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('product');
+if (productId) {
+  const products = document.querySelectorAll('.product-detail');
+  products.forEach((product, index) => {
+    if ((index + 1).toString() === productId) {
+      product.style.display = 'block';
+      product.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      product.style.display = 'none';
+    }
   });
+}
 
-  rightArrow.addEventListener('click', () => {
-    stopAutoSlide();
-    nextCard();
-    startAutoSlide();
+
+
+
+// === Feedback Slider Data & Functions ===
+const feedbacks = [
+  {
+    name: "Jyothi D.",
+    feedback: "I absolutely loved the freshness of the organic items! So grateful I found this platform.",
+    img: "assets/images/person.png"
+  },
+  {
+    name: "Karan V.",
+    feedback: "Swastip’s delivery was fast and smooth. Everything felt natural and safe to eat.",
+    img: "assets/images/person.png"
+  },
+  {
+    name: "Megha R.",
+    feedback: "The design is beautiful, and the service is friendly. Highly recommended!",
+    img: "assets/images/person.png"
+  },
+  {
+    name: "Ashwin T.",
+    feedback: "Good quality, neat packaging, and timely updates. I trust this brand.",
+    img: "assets/images/person.png"
+  },
+  {
+    name: "Nidhi S.",
+    feedback: "Such a helpful and warm team. Their response time is amazing. Great experience overall!",
+    img: "assets/images/person.png"
+  }
+];
+
+let current = 0;
+
+function updateSlider() {
+  const person = feedbacks[current];
+  document.getElementById("name").textContent = person.name;
+  document.getElementById("feedback").textContent = person.feedback;
+  document.getElementById("photo").src = person.img;
+
+  document.querySelectorAll(".dot").forEach((dot, index) => {
+    dot.classList.toggle("active", index === current);
   });
+}
 
-  showCard(current);
-  startAutoSlide();
+function nextSlide() {
+  current = (current + 1) % feedbacks.length;
+  updateSlider();
+}
+
+function prevSlide() {
+  current = (current - 1 + feedbacks.length) % feedbacks.length;
+  updateSlider();
+}
+
+function setSlide(index) {
+  current = index;
+  updateSlider();
+}
+
+// === Initialize slider on page load ===
+updateSlider();
+
+// === Swipe Support (Mobile) ===
+const slider = document.getElementById("slider");
+let startX = 0;
+
+slider.addEventListener("touchstart", function (e) {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", function (e) {
+  const endX = e.changedTouches[0].clientX;
+  const diffX = startX - endX;
+
+  if (diffX > 30) {
+    nextSlide(); // Swipe left
+  } else if (diffX < -30) {
+    prevSlide(); // Swipe right
+  }
+});

@@ -129,25 +129,23 @@
     }
 
     .footer {
-  background-color: #102216;
-  color: #cccccc;
+  background-color: #034d3b;
+  color: #fffcfc;
   text-align: center;
-  padding: 15px 10px;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
+  padding: 8px 10px;
 }
 
+/* Footer icons and styles unchanged */
 .footer-icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
 .footer-icons img {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
@@ -159,6 +157,20 @@
   font-size: 0.9rem;
   margin: 0;
 }
+
+/* Make footer sticky on mobile */
+@media (max-width: 767px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Optional: add a little shadow for separation */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    z-index: 1000; /* make sure it stays on top */
+  }
+}
+
 
   </style>
 </head>

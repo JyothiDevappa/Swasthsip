@@ -154,7 +154,6 @@ header {
   font-size: 22px;
   color: #7b4e2c;
   margin-top: 35px;
-  font-weight: 600;
   text-align: center;
 }
 
@@ -264,40 +263,7 @@ button:hover {
   margin-top: 20px;
 }
 
-/* FOOTER */
 
-
-
-.footer {
-  background-color: #034d3b;
-  color: #fffcfc;
-  text-align: center;
-  padding: 8px 10px;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.footer-icons img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-}
-
-.footer-icons a:hover img {
-  transform: scale(1.2);
-}
-
-.footer p {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-/* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .logo img {
     height: 45px;
@@ -335,6 +301,7 @@ button:hover {
   .description {
     font-size: 20px;
     margin-top: 25px;
+    text-align: center;
   }
 
   .container {
@@ -399,4 +366,51 @@ button:hover {
   height: 30px;
   margin-right: 12px;
   filter: brightness(0) saturate(100%) contrast(100%);
+}
+
+/* FOOTER */
+
+
+
+.footer {
+  background-color: #034d3b;
+  color: #fffcfc;
+  text-align: center;
+  padding: 8px 10px;
+}
+
+/* Footer icons and styles unchanged */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Make footer sticky on mobile */
+@media (max-width: 767px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Optional: add a little shadow for separation */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    z-index: 1000; /* make sure it stays on top */
+  }
 }

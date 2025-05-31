@@ -177,45 +177,37 @@
   </section>
 
 
-  <!-- feedback-section -->
-  <section class="feedback-section scroll-fade" id="feedback">
+<!-- Feedback Section -->
+<!-- Feedback Headings (OUTSIDE the feedback card) -->
+<section class="feedback-wrapper">
+  <h2 class="feedback-heading">What Our Customers Say</h2>
+  <p class="feedback-subheading">
+    "Their words say it all. We're proud to share their experience."
+  </p>
 
-    <div class="feedback-container">
-      <h2 class="section-title"> What Our Customer Says </h2>
-      <h3 style="text-align: center;">Their words say it all. We're proud to share their experiences.</h3>
-
-      <div class="feedback-wrapper">
-        <button class="arrow left-arrow">&#8592;</button>
-
-        <div class="carousel-outer">
-          <div class="feedback-carousel" id="feedback-carousel">
-            <div class="feedback-card">
-              <img src="assets/images/person.png" alt="Person Icon" class="feedback-icon" />
-              <p>"Amazing organic products! Fresh and healthy."</p>
-              <h4>- Riya K.</h4>
-            </div>
-
-            <div class="feedback-card">
-              <img src="assets/images/person.png" alt="Person Icon" class="feedback-icon" />
-              <p>"Swastip shop quality is unmatched."</p>
-              <h4>- Aman S.</h4>
-            </div>
-
-            <div class="feedback-card">
-              <img src="assets/images/person.png" alt="Person Icon" class="feedback-icon" />
-              <p>"Love their customer service and quick delivery."</p>
-              <h4>- Sneha M.</h4>
-            </div>
-          </div>
-        </div>
-
-        <button class="arrow right-arrow">&#8594;</button>
+  <!-- Feedback Card Starts -->
+  <div class="feedback-section">
+    <div class="slider" id="slider">
+      <div class="nav left" onclick="prevSlide()">&#10094;</div>
+      <img id="photo" src="assets/images/person.png" alt="User Photo">
+      <h2 id="name">Nidhi S.</h2>
+      <p class="feedback" id="feedback">
+        Such a helpful and warm team. Their response time is amazing. Great experience overall!
+      </p>
+      <div class="dots">
+        <span class="dot active" onclick="setSlide(0)"></span>
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
       </div>
+      <div class="nav right" onclick="nextSlide()">&#10095;</div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Feedback Section Ends -->
 
   <!-- Feedback form section-->
-  <section id="slide4">
+  <section id="slide5">
 
     <form id="feedbackForm" action="https://formsubmit.co/jyothidevappa@gmail.com" method="POST"
       style="max-width: 600px; margin: auto;">

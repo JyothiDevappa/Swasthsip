@@ -8,9 +8,8 @@ body, html {
   font-family: 'Poppins', sans-serif;
   height: 100%;
   overflow-x: hidden;
-  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* optional: wood texture */
   padding-top: 70px; /* space for header */
-
+  background-color: antiquewhite;
 }
 
 .swasthsip-font {
@@ -283,23 +282,23 @@ html {
 
 /* FOOTER */
 .footer {
-  background-color: #263a1d;
-  color: #ccc;
+  background-color: #034d3b;
+  color: #fffcfc;
   text-align: center;
-  padding: 15px 10px;
-  width: 100%;
+  padding: 8px 10px;
 }
 
+/* Footer icons and styles unchanged */
 .footer-icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
 .footer-icons img {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
@@ -312,6 +311,18 @@ html {
   margin: 0;
 }
 
+/* Make footer sticky on mobile */
+@media (max-width: 767px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Optional: add a little shadow for separation */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    z-index: 1000; /* make sure it stays on top */
+  }
+}
 
 
 
