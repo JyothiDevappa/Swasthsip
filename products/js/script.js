@@ -99,5 +99,19 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
 
 
+// Mobile swipe support 
+let startX = 0;
+let scrollLeft = 0;
+
+slider.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].pageX;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('touchmove', (e) => {
+  const x = e.touches[0].pageX;
+  const walk = (x - startX) * -1;
+  slider.scrollLeft = scrollLeft + walk;
+});
 
 

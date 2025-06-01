@@ -88,8 +88,9 @@
     }
 
     .container.story {
-      max-width: 700px;
+      max-width: 850px;
       margin: auto;
+      
       background-color: #fff9f0;
       padding: 2rem;
       border-radius: 12px;
@@ -128,11 +129,26 @@
       }
     }
 
-    .footer {
+ /* FOOTER */
+.footer {
   background-color: #034d3b;
   color: #fffcfc;
   text-align: center;
   padding: 8px 10px;
+  position: relative;
+  width: 100%;
+}
+
+/* For small screen heights (optional), make footer fixed */
+@media (max-height: 600px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
 }
 
 /* Footer icons and styles unchanged */
@@ -158,19 +174,11 @@
   margin: 0;
 }
 
-/* Make footer sticky on mobile */
-@media (max-width: 767px) {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* Optional: add a little shadow for separation */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-    z-index: 1000; /* make sure it stays on top */
-  }
-}
 
+ a {
+  color: inherit;
+  text-decoration: none;
+}
 
   </style>
 </head>
@@ -181,11 +189,13 @@
       <a href="story.html">
         <img src="assets/images/Swastip.png" alt="Swastip Logo" />
       </a>
-      <span>SwasthSip</span>
+
+<a href="index.html" class="swasthsip-font">SwasthSip</a>
+
     </div>
     
     <nav class="navbar">
-<a href="index.html" class="nav-link active">Home</a>
+<a href="index.html">Home</a>
   <a href="index.html#products">Products</a>
   <a href="index.html#quality">Quality</a>
   <a href="index.html#feedback">Feedback</a>
