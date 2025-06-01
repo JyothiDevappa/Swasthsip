@@ -193,11 +193,14 @@ html {
 .product-detail ul {
   list-style-type: disc;
   padding-left: 20px;
+    line-height: 1.8;
+
 }
 
 .product-detail ul li {
   margin-bottom: 10px;
   font-size: 1.1em;
+
 }
 
 /* Responsive padding for product detail */

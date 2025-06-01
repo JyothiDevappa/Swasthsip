@@ -1,3 +1,4 @@
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -8,77 +9,97 @@ body, html {
   font-family: 'Poppins', sans-serif;
   height: 100%;
   overflow-x: hidden;
-      background-color: #e6ebe2;
-
+  background-color: #e6ebe2;
 }
 
+/* Swasthsip font class */
 .swasthsip-font {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   letter-spacing: 0.05em;
   font-style: normal;
   color: #ffffff;
-
-  padding: 6px 16px; /* reduced padding */
+  padding: 6px 16px;
   display: inline-block;
+    font-size: 25px;
+
 }
 
 
 
-/* HEADER */
-header {
-  position: absolute;
-  top: 0;
-  width: 100%;
+
+        /* Tagline Styling */
+        .tagline-heading {
+            font-family: 'lora', serif; /* Stylish font for the tagline */
+            font-size: 1.8rem; /* Larger font size for emphasis */
+            color: #4b5320; /* Dark green color for the text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            margin: 0;
+              text-align: center;
   padding: 10px 30px;
+
+        }
+
+        .tagline-heading .highlight {
+            color: #b86e25; /* Golden color for the highlighted text */
+            font-weight: bold; /* Make the highlighted text bold */
+        }
+
+        /* Indian Flag Colors for Bharath */
+            /* Indian Flag Colors for Bharath */
+            .flag-color {
+                background: linear-gradient(90deg, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%); /* Saffron, White, Green */
+                -webkit-background-clip: text; /* Clip the gradient to the text */
+                -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+                font-weight: bold; /* Make the text bold */
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for visibility */
+            }
+
+                    /* Responsive Font Size for Mobile View */
+        @media (max-width: 768px) {
+            .tagline-heading {
+                font-size: 1.5rem; /* Smaller font size for mobile screens */
+            }
+        }
+
+/* Main Header (Navigation) */
+header {
+  padding: 4px 20px; /* decreased vertical padding */
+  width: 100%;
+  background-color: #5C4033;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  
+  position: relative;
+  font-size: 16px;
 }
-
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(255, 255, 255);
-  font-size: 20px;
+  color: white;
+  font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-
-
 .logo img {
-  height: 65px; /* or 50px if you want bigger */
+  height: 65px;  /* slightly increased image height */
   width: auto;
   object-fit: contain;
 }
-
-
-@media (max-width: 768px) {
-  .logo img {
-    height: 40px;
-  }
-
-  .navbar {
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-}
-
 .navbar {
   display: flex;
   gap: 30px;
 }
 
 .navbar a {
-  color: rgb(255, 255, 255);
+  color: white;
   text-decoration: none;
   position: relative;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   font-weight: 500;
 }
 
@@ -98,14 +119,20 @@ header {
   width: 100%;
 }
 
-/* HAMBURGER */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   font-size: 28px;
   color: white;
   cursor: pointer;
 }
+
+/* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
+  .logo img {
+    height: 40px;
+  }
+
   .navbar {
     display: none;
     flex-direction: column;
@@ -124,9 +151,10 @@ header {
   .hamburger {
     display: block;
   }
-
-  
 }
+
+
+
 
 
 /*   first slide */
@@ -265,6 +293,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
 
 /* PRODUCTS SECTION */
 .products {
