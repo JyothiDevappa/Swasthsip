@@ -115,3 +115,32 @@ slider.addEventListener('touchmove', (e) => {
 });
 
 
+
+
+
+
+
+// youtube //
+
+  const track = document.querySelector('.video-carousel-track');
+  const slides = document.querySelectorAll('.video-carousel-slide');
+  const prevBtn = document.querySelector('.video-carousel-button.top');
+  const nextBtn = document.querySelector('.video-carousel-button.bottom');
+
+  let currentSlide = 0;
+
+  function scrollToSlide(index) {
+    const width = slides[0].clientWidth;
+    track.scrollTo({ left: width * index, behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentSlide = Math.max(0, currentSlide - 1);
+    scrollToSlide(currentSlide);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentSlide = Math.min(slides.length - 1, currentSlide + 1);
+    scrollToSlide(currentSlide);
+  });
+
